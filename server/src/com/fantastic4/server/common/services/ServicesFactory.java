@@ -2,7 +2,7 @@ package com.fantastic4.server.common.services;
 
 import java.rmi.Remote;
 
-public interface ServiceFactory extends Remote {
+public interface ServicesFactory extends Remote {
     enum ServicesType {
 
     }
