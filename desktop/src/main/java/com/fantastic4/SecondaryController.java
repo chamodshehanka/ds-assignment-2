@@ -11,17 +11,17 @@ public class SecondaryController {
     @FXML
     private Pane pnl_home,pnl_sensors,pnl_rooms;
     @FXML
-    private Button btn_home,btn_manageSensors,btn_manageRooms;
+    private Button btn_home,btn_manage_sensors,btn_manage_rooms;
 
     @FXML
     private void handleButtonAction(ActionEvent event){
         if(event.getSource() == btn_home){
                     pnl_home.toFront();
         }
-        else if (event.getSource() == btn_manageRooms){
+        else if (event.getSource() == btn_manage_rooms){
                 pnl_rooms.toFront();
         }
-        else if(event.getSource() == btn_manageSensors){
+        else if(event.getSource() == btn_manage_sensors){
             pnl_sensors.toFront();
         }
     }
