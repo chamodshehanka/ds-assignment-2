@@ -1,8 +1,10 @@
 package com.fantastic4.server.repository;
 
+import com.fantastic4.server.repository.custom.impl.SensorRepositoryImpl;
+
 public class RepositoryFactory {
     public enum RepositoryFactoryTypes{
-        ADMIN, BRANCH, CUSTOMER, DRIVER, PAYMENT, RECEPTION, RESERVATION, VEHICLE
+        SENSOR
     }
 
     private RepositoryFactory() {
@@ -18,14 +20,7 @@ public class RepositoryFactory {
 
     public SuperRepository getRepository(RepositoryFactoryTypes repositoryFactoryTypes){
         switch (repositoryFactoryTypes){
-//            case ADMIN: return new AdminRepositoryImpl();
-//            case BRANCH: return new BranchRepositoryImpl();
-//            case DRIVER: return new DriverRepositoryImpl();
-//            case PAYMENT: return new PaymentRepositoryImpl();
-//            case VEHICLE: return new VehicleRepositoryImpl();
-//            case CUSTOMER: return new CustomerRepositoryImpl();
-//            case RECEPTION: return new ReceptionRepositoryImpl();
-//            case RESERVATION:return new ReservationRepositoryImpl();
+            case SENSOR: return new SensorRepositoryImpl();
             default: return null;
         }
     }

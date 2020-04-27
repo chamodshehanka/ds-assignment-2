@@ -1,8 +1,10 @@
 package com.fantastic4.server.business;
 
+import com.fantastic4.server.business.custom.impl.SensorBOImpl;
+
 public class BOFactory {
     public enum BOTypes{
-        CUSTOMER, VEHICLE, BRANCH, DRIVER, RECEPTION, ADMIN, RESERVATION, PAYMENT
+        SENSOR
     }
 
     private BOFactory() {
@@ -18,7 +20,7 @@ public class BOFactory {
 
     public SuperBO getBOFactory(BOTypes boTypes){
         switch (boTypes){
-
+            case SENSOR: return new SensorBOImpl();
             default:return null;
         }
     }

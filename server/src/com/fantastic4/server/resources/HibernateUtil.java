@@ -10,7 +10,7 @@ public class HibernateUtil {
     static {
         try {
             sessionFactory = new Configuration().configure(
-                    "/config/hibernate.cfg.xml"
+                    "/com/fantastic4/server/config/hibernate.cfg.xml"
             ).buildSessionFactory();
         }catch (HibernateException e){
             e.printStackTrace();
