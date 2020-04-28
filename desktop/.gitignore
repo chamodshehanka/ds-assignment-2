@@ -1,3 +1,5 @@
 .idea/
 desktop.iml
 target/
+.DS_Store
+../.DS_Store
