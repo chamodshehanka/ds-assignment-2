@@ -1,0 +1,5 @@
+afirealert@gmail.com
+fantastic4!
+
+
+http://localhost:8080/send-mail
