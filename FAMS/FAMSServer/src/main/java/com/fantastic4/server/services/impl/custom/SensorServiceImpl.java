@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SensorServiceImpl extends UnicastRemoteObject implements SensorService {
 
-    private SensorBO sensorBO;
+    private final SensorBO sensorBO;
 //    public static final
 
 
