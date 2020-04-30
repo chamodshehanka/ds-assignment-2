@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 
 @SpringBootApplication
 public class SmsServerApplication implements CommandLineRunner{
@@ -20,6 +22,8 @@ public class SmsServerApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		
 		Twilio.init(ACCOUNT_SID,AUTH_TOKEN);
+		Message.creator(new PhoneNumber("+94778702750"), new PhoneNumber("+12183963759"), "Fire Alert !").create(); 
 	}
+	
 
 }
