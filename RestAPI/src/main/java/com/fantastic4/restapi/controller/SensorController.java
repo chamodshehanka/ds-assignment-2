@@ -4,6 +4,7 @@ import com.fantastic4.restapi.dto.SensorDTO;
 import com.fantastic4.restapi.service.FirebaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +21,8 @@ public class SensorController {
         return firebaseService.addSensorData(sensorDTO);
     }
 
+    @PutMapping("/deleteSensor")
+    public String removeSensor(String sensorID) {
+        return null;
+    }
 }
