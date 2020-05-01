@@ -19,7 +19,7 @@ class Sensors extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='ui container'>
         <table className='ui celled inverted grey table'>
           <thead>
             <tr>
@@ -41,7 +41,7 @@ class Sensors extends Component {
                     backgroundColor: sensor.sensorID !== 'S002' ? 'teal' : 'orange',
                   }}
                 >
-                  Online
+                  Active
                 </td>
                 <td>Roof Top</td>
                 <td>7</td>
