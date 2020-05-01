@@ -2,12 +2,8 @@ package com.fantastic4.restapi.service;
 
 import com.fantastic4.restapi.dto.SensorDTO;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.CollectionReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.FirebaseApp;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -17,9 +13,9 @@ import java.util.concurrent.ExecutionException;
 public class FirebaseService {
 
     //    @Autowired
-//    private Firestore firestore = FirestoreClient.getFirestore();
-    Firestore firestore = new FirebaseInitialize().getFirestore();
-
+    private final Firestore firestore = FirestoreClient.getFirestore();
+//    Firestore firestore = new FirebaseInitialize().getFirestore();
+//Firestore firestore = FirebaseInitialize.firestore;
     private CollectionReference getSensorCollection() {
         return firestore.collection("sensors");
     }

@@ -1,7 +1,10 @@
 package com.fantastic4.restapi.service;
 
+import com.fantastic4.restapi.dto.SensorDTO;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.FirebaseApp;
@@ -11,13 +14,12 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
 
 @Service
 public class FirebaseInitialize {
 
-    Firestore firestore;
+    static Firestore firestore;
 
     @PostConstruct
     public void initialize() {
@@ -33,24 +35,35 @@ public class FirebaseInitialize {
             FirebaseApp.initializeApp(options);
             firestore = FirestoreClient.getFirestore();
 
-            FirebaseInitialize firebaseInitialize = new FirebaseInitialize();
-            HashMap<String, String> message = firebaseInitialize.getMessage();
-            ApiFuture<WriteResult> future = firestore
-                    .collection("sample").document("doc1")
-                    .set(message);
-            System.out.println("Successfully Updated! " + future.get().getUpdateTime());
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public HashMap<String, String> getMessage() throws IOException {
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("hello", "chamod");
-        return hashMap;
+    public String addSensorData(SensorDTO sensorDTO) throws ExecutionException, InterruptedException {
+        ApiFuture<WriteResult> collectionApiFuture = firestore
+                .collection("sensors")
+                .document(sensorDTO.getSensorId())
+                .set(sensorDTO);
+
+        return collectionApiFuture.get().getUpdateTime().toString();
     }
 
-    public Firestore getFirestore(){
-        return firestore;
+    public SensorDTO getSensor(String sensorID) {
+        DocumentReference documentReference = firestore
+                .collection("sensors")
+                .document(sensorID);
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        SensorDTO sensorDTO = null;
+        try {
+            DocumentSnapshot document = future.get();
+            if (document.exists()) {
+                sensorDTO = document.toObject(SensorDTO.class);
+            }
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return sensorDTO;
     }
 }
