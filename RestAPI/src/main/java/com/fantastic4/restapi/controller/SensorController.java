@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class SensorController {
 
