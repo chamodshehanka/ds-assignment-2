@@ -19,22 +19,22 @@ public class SensorController {
     }
 
     @DeleteMapping("/deleteSensor")
-    public String removeSensor(@RequestBody String sensorID) {
-        return null;
+    public String removeSensor(@RequestBody String sensorID) throws ExecutionException, InterruptedException {
+        return firebaseInitialize.deleteSensorData(sensorID);
     }
 
     @PutMapping("/updateSensor")
-    public String updateSensor(@RequestBody SensorDTO sensorDTO) {
-        return null;
+    public String updateSensor(@RequestBody SensorDTO sensorDTO) throws ExecutionException, InterruptedException {
+        return firebaseInitialize.updateSensorData(sensorDTO);
     }
 
     @GetMapping("/getSensor")
-    public SensorDTO getSensor(@RequestBody String sensorID) {
-        return firebaseInitialize.getSensor(sensorID);
+    public SensorDTO getSensor(@RequestBody String sensorID) throws ExecutionException, InterruptedException {
+        return firebaseInitialize.getSensorByID(sensorID);
     }
 
     @GetMapping("/getAllSensors")
-    public ArrayList<SensorDTO> getAllSensors() {
-        return null;
+    public ArrayList<SensorDTO> getAllSensors() throws ExecutionException, InterruptedException {
+        return firebaseInitialize.getAllSensors();
     }
 }
