@@ -9,8 +9,9 @@ class Sensors extends Component {
   componentDidMount() {
     Axios.get('http://localhost:8080/getAllSensors')
       .then((res) => {
+        console.log(res.data);
         this.setState({
-          sensors: [res.data],
+          sensors: res.data,
         });
       })
       .catch((err) => console.error(err));
@@ -19,7 +20,7 @@ class Sensors extends Component {
   render() {
     return (
       <div className='container'>
-        <table className='ui celled table'>
+        <table className='ui celled inverted grey table'>
           <thead>
             <tr>
               <th>Sensor ID</th>
@@ -32,21 +33,21 @@ class Sensors extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label='Name'>James</td>
-              <td data-label='Age'>24</td>
-              <td data-label='Job'>Engineer</td>
-            </tr>
-            <tr>
-              <td data-label='Name'>Jill</td>
-              <td data-label='Age'>26</td>
-              <td data-label='Job'>Engineer</td>
-            </tr>
-            <tr>
-              <td data-label='Name'>Elyse</td>
-              <td data-label='Age'>24</td>
-              <td data-label='Job'>Designer</td>
-            </tr>
+            {this.state.sensors.map((sensor, i) => (
+              <tr key={i}>
+                <td data-label='Sensor ID'>{sensor.sensorID}</td>
+                <td
+                  style={{
+                    backgroundColor: sensor.sensorID !== 'S002' ? 'teal' : 'orange',
+                  }}
+                >
+                  Online
+                </td>
+                <td>Roof Top</td>
+                <td>7</td>
+                <td>6</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
