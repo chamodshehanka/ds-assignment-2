@@ -11,12 +11,11 @@ import java.util.concurrent.ExecutionException;
 @RestController
 public class SensorController {
 
-    @Autowired
-    FirebaseService firebaseService;
+//    @Autowired
+    FirebaseService firebaseService = new FirebaseService();
 
     @PostMapping("/createSensor")
     public String addSensor(@RequestBody SensorDTO sensorDTO) throws ExecutionException, InterruptedException {
-        System.out.println("Sensor ID : "+sensorDTO.getSensorId());
         return firebaseService.addSensorData(sensorDTO);
     }
 

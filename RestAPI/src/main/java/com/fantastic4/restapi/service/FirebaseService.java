@@ -30,11 +30,17 @@ public class FirebaseService {
         HashMap<String, String> sensor = new HashMap<>();
         sensor.put("sensorId", sensorDTO.getSensorId());
         sensor.put("floorNo", sensorDTO.getFloorNo());
-        System.out.println("Sensor DTO : " + sensorDTO.getFloorNo());
+        System.out.println("dureksha : "+ firestore
+                .collection("sensors")
+                .document("doc1")
+                .set(sensor));
         ApiFuture<WriteResult> collectionApiFuture = firestore.collection("sensors").document("doc1")
                 .set(sensor);
         System.out.println("Collection API Future" + collectionApiFuture);
-        return collectionApiFuture.get().getUpdateTime().toString();
+
+//       collectionApiFuture.get().getUpdateTime().toString();
+
+        return "done" ;
     }
 
 }

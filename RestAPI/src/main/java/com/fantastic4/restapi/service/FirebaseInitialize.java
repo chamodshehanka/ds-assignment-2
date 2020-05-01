@@ -46,7 +46,7 @@ public class FirebaseInitialize {
 
     public HashMap<String, String> getMessage() throws IOException {
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("hello", "chammod");
+        hashMap.put("hello", "chamod");
         return hashMap;
     }
 
