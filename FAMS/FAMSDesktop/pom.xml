@@ -11,6 +11,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <fams.common.version>1.0-SNAPSHOT</fams.common.version>
     </properties>
     <dependencies>
         <dependency>
@@ -22,6 +23,17 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fantastic4</groupId>
+            <artifactId>FAMSServer</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fantastic4</groupId>
+            <artifactId>FAMSCommon</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
@@ -39,7 +51,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.1</version>
                 <configuration>
-                    <mainClass>com.fantastic4.App</mainClass>
+                    <mainClass>com.fantastic4.desktop.main.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>

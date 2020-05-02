@@ -1,4 +1,4 @@
-package com.fantastic4;
+package com.fantastic4.desktop.fxml.controller;
 
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class FXMLDocumentController implements Initializable {
             dashboard = FXMLLoader.load(getClass().getResource("livedashboard.fxml"));
             setNode(dashboard);
         } catch (IOException ex) {
-            //Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
     }

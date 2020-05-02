@@ -4,13 +4,20 @@ import com.fantastic4.common.services.ServicesFactory;
 import com.fantastic4.common.services.SuperService;
 import com.fantastic4.common.services.custom.SensorService;
 
+import java.rmi.Naming;
+
 public class ProxyHandler implements ServicesFactory {
 
     private static ProxyHandler proxyHandler;
     private SensorService sensorService;
 
     private ProxyHandler() {
-        
+        try {
+            ServicesFactory servicesFactory = (ServicesFactory) Naming.lookup("rmi://localhost:5050/fams");
+            sensorService = (SensorService) servicesFactory.getService(ServicesType.SENSOR);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static ProxyHandler getInstance(){

@@ -1,4 +1,4 @@
-package com.fantastic4;
+package com.fantastic4.desktop.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
