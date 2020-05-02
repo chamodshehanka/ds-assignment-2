@@ -1,8 +1,6 @@
 package com.fantastic4.server.startup;
 
-import com.fantastic4.common.dto.SensorDTO;
 import com.fantastic4.server.services.impl.ServicesFactoryImpl;
-import com.fantastic4.server.services.impl.custom.SensorServiceImpl;
 
 import javax.swing.*;
 import java.rmi.registry.LocateRegistry;
@@ -14,7 +12,7 @@ public class ServerStart {
         try {
             if (true) {
                 Registry registry = LocateRegistry.createRegistry(5050);
-                registry.rebind("rentLio", ServicesFactoryImpl.getInstance());
+                registry.rebind("fams", ServicesFactoryImpl.getInstance());
 
                 System.out.println("Server has been started successfully");
             } else {

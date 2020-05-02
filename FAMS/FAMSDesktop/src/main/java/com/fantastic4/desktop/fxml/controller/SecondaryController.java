@@ -1,7 +1,8 @@
-package com.fantastic4;
+package com.fantastic4.desktop.fxml.controller;
 
 import java.io.IOException;
 
+import com.fantastic4.desktop.main.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
