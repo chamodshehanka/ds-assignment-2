@@ -2,25 +2,35 @@ package com.fantastic4.common.dto;
 
 public class SensorDTO implements SuperDTO {
 
-    private String sensorId;
+    private String sensorID;
     private String roomNo,floorNo,co2Level;
 
     public SensorDTO() {
     }
 
-    public SensorDTO(String sensorId, String roomNo, String floorNo, String co2Level) {
-        this.sensorId = sensorId;
+    public SensorDTO(String sensorID, String roomNo, String floorNo, String co2Level) {
+        this.sensorID = sensorID;
         this.roomNo = roomNo;
         this.floorNo = floorNo;
         this.co2Level = co2Level;
     }
 
-    public String getSensorId() {
-        return sensorId;
+    @Override
+    public String toString() {
+        return "{" +
+                "sensorID:'" + sensorID + '\'' +
+                ", roomNo:'" + roomNo + '\'' +
+                ", floorNo:'" + floorNo + '\'' +
+                ", co2Level:'" + co2Level + '\'' +
+                '}';
     }
 
-    public void setSensorId(String sensorId) {
-        this.sensorId = sensorId;
+    public String getSensorID() {
+        return sensorID;
+    }
+
+    public void setSensorID(String sensorID) {
+        this.sensorID = sensorID;
     }
 
     public String getRoomNo() {

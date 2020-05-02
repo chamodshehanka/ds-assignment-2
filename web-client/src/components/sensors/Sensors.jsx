@@ -38,7 +38,8 @@ class Sensors extends Component {
                 <td data-label='Sensor ID'>{sensor.sensorID}</td>
                 <td
                   style={{
-                    backgroundColor: sensor.sensorID !== 'S002' ? 'teal' : 'orange',
+                    backgroundColor:
+                      sensor.sensorID !== 'S002' ? 'teal' : 'orange',
                   }}
                 >
                   Active

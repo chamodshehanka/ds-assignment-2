@@ -12,8 +12,6 @@ import java.util.List;
 public class SensorServiceImpl extends UnicastRemoteObject implements SensorService {
 
     private final SensorBO sensorBO;
-//    public static final
-
 
     public SensorServiceImpl() throws RemoteException {
         sensorBO = (SensorBO) BOFactory.getInstance()
@@ -42,7 +40,7 @@ public class SensorServiceImpl extends UnicastRemoteObject implements SensorServ
 
     @Override
     public List<SensorDTO> getAllSensors() throws Exception {
-        return null;
+        return sensorBO.getAllSensors();
     }
 
     @Override
