@@ -1,8 +1,8 @@
 package com.fantastic4.desktop.controller;
 
-import com.fantastic4.common.dto.SensorDTO;
-import com.fantastic4.common.services.ServicesFactory;
-import com.fantastic4.common.services.custom.SensorService;
+import com.fantastic4.desktop.dto.SensorDTO;
+import com.fantastic4.desktop.services.ServicesFactory;
+import com.fantastic4.desktop.services.custom.SensorService;
 import com.fantastic4.desktop.proxy.ProxyHandler;
 
 public class SensorController {
