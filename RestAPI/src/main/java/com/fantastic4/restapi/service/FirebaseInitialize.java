@@ -209,6 +209,7 @@ public class FirebaseInitialize {
 
         List<QueryDocumentSnapshot> documents = futures.get().getDocuments();
         documents.forEach(doc -> {
+            System.out.println(doc.get("sen"));
             sensorArrayList.add(doc.toObject(Sensor.class));
         });
 
@@ -217,7 +218,10 @@ public class FirebaseInitialize {
 
     public ArrayList<SensorData> getAllSensorData() throws ExecutionException, InterruptedException {
         ApiFuture<QuerySnapshot> futures = firestore
-                .collection("sensorData").get();
+                .collection("sensors")
+                .document("S001")
+                .collection("sensorData").orderBy("date")
+                .get();
 
         ArrayList<SensorData> sensorDataArrayList = new ArrayList<>();
 
@@ -227,6 +231,33 @@ public class FirebaseInitialize {
         });
 
         return sensorDataArrayList;
+    }
+
+    public ArrayList<SensorData> getAllLatestSensorData() throws ExecutionException, InterruptedException {
+        ArrayList<SensorData> sensorDataLatestArrayList = new ArrayList<>();
+
+        ArrayList<Sensor> sensorArrayList = getAllSensors();
+        sensorArrayList.forEach((sensor) -> {
+            ApiFuture<QuerySnapshot> futures = firestore
+                    .collection("sensors")
+                    .document(sensor.getSensorID())
+                    .collection("sensorData").orderBy("date")
+                    .limit(1)
+                    .get();
+
+            List<QueryDocumentSnapshot> documents = null;
+            try {
+                documents = futures.get().getDocuments();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+            assert documents != null;
+            documents.forEach(doc -> {
+                sensorDataLatestArrayList.add(doc.toObject(SensorData.class));
+            });
+        });
+
+        return sensorDataLatestArrayList;
     }
 
     public ArrayList<Room> getAllRooms() throws ExecutionException, InterruptedException {

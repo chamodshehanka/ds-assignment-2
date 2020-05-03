@@ -2,16 +2,26 @@ package com.fantastic4.restapi.dto;
 
 public class SensorData {
     private String sensorDataID;
+    private String sensorID;
+    private int floorNo;
+    private int roomNo;
+    private int co2Level;
+    private int smokeLevel;
     private String date;
-    private String time;
+    private boolean status;
 
     public SensorData() {
     }
 
-    public SensorData(String sensorDataID, String date, String time) {
+    public SensorData(String sensorDataID, String sensorID, int floorNo, int roomNo, int co2Level, int smokeLevel, String date, boolean status) {
         this.sensorDataID = sensorDataID;
+        this.sensorID = sensorID;
+        this.floorNo = floorNo;
+        this.roomNo = roomNo;
+        this.co2Level = co2Level;
+        this.smokeLevel = smokeLevel;
         this.date = date;
-        this.time = time;
+        this.status = status;
     }
 
     public String getSensorDataID() {
@@ -22,6 +32,46 @@ public class SensorData {
         this.sensorDataID = sensorDataID;
     }
 
+    public String getSensorID() {
+        return sensorID;
+    }
+
+    public void setSensorID(String sensorID) {
+        this.sensorID = sensorID;
+    }
+
+    public int getFloorNo() {
+        return floorNo;
+    }
+
+    public void setFloorNo(int floorNo) {
+        this.floorNo = floorNo;
+    }
+
+    public int getRoomNo() {
+        return roomNo;
+    }
+
+    public void setRoomNo(int roomNo) {
+        this.roomNo = roomNo;
+    }
+
+    public int getCo2Level() {
+        return co2Level;
+    }
+
+    public void setCo2Level(int co2Level) {
+        this.co2Level = co2Level;
+    }
+
+    public int getSmokeLevel() {
+        return smokeLevel;
+    }
+
+    public void setSmokeLevel(int smokeLevel) {
+        this.smokeLevel = smokeLevel;
+    }
+
     public String getDate() {
         return date;
     }
@@ -30,11 +80,11 @@ public class SensorData {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

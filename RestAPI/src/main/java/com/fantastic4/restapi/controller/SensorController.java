@@ -91,6 +91,11 @@ public class SensorController {
         return firebaseInitialize.getAllSensorData();
     }
 
+    @GetMapping("/getAllLatestSensorData")
+    public ArrayList<SensorData> getAllLatestSensorData() throws ExecutionException, InterruptedException {
+        return firebaseInitialize.getAllLatestSensorData();
+    }
+
     @PostMapping("/createAdmin")
     public String createAdmin(@RequestBody Admin admin) throws ExecutionException, InterruptedException {
         return firebaseInitialize.addAdmin(admin);

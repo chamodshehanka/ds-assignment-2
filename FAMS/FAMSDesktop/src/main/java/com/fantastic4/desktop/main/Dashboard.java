@@ -10,7 +10,7 @@ public class Dashboard extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("fxmldocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fantastic4/fxmldocument.fxml"));
 
         Scene scene = new Scene(root);
 

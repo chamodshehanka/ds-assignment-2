@@ -7,7 +7,7 @@ class Sensors extends Component {
   };
 
   componentDidMount() {
-    Axios.get('http://localhost:8080/getAllSensors')
+    Axios.get('http://localhost:8080/getAllLatestSensorData')
       .then((res) => {
         console.log(res.data);
         this.setState({
@@ -33,20 +33,24 @@ class Sensors extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.sensors.map((sensor, i) => (
-              <tr key={i}>
-                <td data-label='Sensor ID'>{sensor.sensorID}</td>
-                <td
-                  style={{
-                    backgroundColor:
-                      sensor.sensorID !== 'S002' ? 'teal' : 'orange',
-                  }}
-                >
-                  Active
+            {this.state.sensors.map((sensorData, i) => (
+              <tr
+                key={i}
+                style={{
+                  backgroundColor:
+                    sensorData.co2Level > 5 || sensorData.smokeLevel > 5
+                      ? '#e84118'
+                      : 'teal',
+                }}
+              >
+                <td data-label='Sensor ID'>{sensorData.sensorID}</td>
+                <td>{sensorData.status === true ? 'Active' : 'Deactivated'}</td>
+                <td>
+                  Floor No: {sensorData.floorNo}
+                  <br /> Room No: {sensorData.roomNo}
                 </td>
-                <td>Roof Top</td>
-                <td>7</td>
-                <td>6</td>
+                <td>{sensorData.smokeLevel}</td>
+                <td>{sensorData.co2Level}</td>
               </tr>
             ))}
           </tbody>
