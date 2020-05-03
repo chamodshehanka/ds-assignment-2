@@ -22,7 +22,7 @@ public class ServicesFactoryImpl extends UnicastRemoteObject implements Services
     @Override
     public SuperService getService(ServicesType servicesType) throws Exception {
         switch (servicesType){
-//            case SENSOR: return new SensorServiceImpl();
+            case SENSOR: return new SensorServiceImpl();
             default: return null;
         }
     }
