@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.fantastic4</groupId>
             <artifactId>FAMSCommon</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${fams.common.version}</version>
         </dependency>
     </dependencies>
     <build>
