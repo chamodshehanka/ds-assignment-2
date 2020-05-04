@@ -1,6 +1,7 @@
 package com.fantastic4.server.services.impl.custom;
 
 import com.fantastic4.common.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.common.services.custom.SensorService;
 import com.fantastic4.server.business.BOFactory;
 import com.fantastic4.server.business.custom.SensorBO;
@@ -41,6 +42,11 @@ public class SensorServiceImpl extends UnicastRemoteObject implements SensorServ
     @Override
     public List<SensorDTO> getAllSensors() throws Exception {
         return sensorBO.getAllSensors();
+    }
+
+    @Override
+    public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
+        return sensorBO.getSensorData(sensorID);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.fantastic4.server.repository.custom.impl;
 
 import com.fantastic4.common.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.server.repository.custom.SensorRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -70,5 +71,27 @@ public class SensorRepositoryImpl implements SensorRepository {
         });
 
         return sensorDTOList;
+    }
+
+    @Override
+    public List<SensorDataDTO> getSensorData(String sensorID) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/getSensorData?"+sensorID))
+                .build();
+
+        List<SensorDataDTO> sensorDataDTOList = new ArrayList<>();
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+        JSONArray jsonArray = new JSONArray(response.body());
+        ObjectMapper mapper = new ObjectMapper();
+        jsonArray.forEach(object -> {
+            try {
+                sensorDataDTOList.add(mapper.readValue(object.toString(), SensorDataDTO.class));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        });
+
+        return sensorDataDTOList;
     }
 }
