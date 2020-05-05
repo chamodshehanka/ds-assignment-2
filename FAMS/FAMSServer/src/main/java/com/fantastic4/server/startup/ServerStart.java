@@ -12,14 +12,12 @@ import java.util.List;
 
 public class ServerStart {
     public static void main(String[] args){
-<<<<<<< HEAD
         System.setProperty("java.rmi.server.hostname","localhost");
         System.setProperty("java.security.policy", "file:./server.policy");
-=======
+
 //        System.setProperty("java.rmi.server.hostname","127.0.0.1");
 //        System.setProperty("java.security.policy","security.policy");
 //        System.setSecurityManager(new RMISecurityManager());
->>>>>>> 07041a91308021a3a17fabe35637fef242002b2d
         try {
             if (true) {
 //                if(System.getSecurityManager() == null ){
