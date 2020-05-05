@@ -2,21 +2,16 @@ package com.fantastic4.desktop.fxml.controller;
 
 import com.fantastic4.common.dto.SensorDTO;
 import com.fantastic4.desktop.controller.SensorController;
-import com.fantastic4.common.dto.SensorDataDTO;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class SensorDataController implements Initializable{
 
-    SensorController sensorController = new SensorController();
     @FXML
     private Text sensorName,floorNo,roomNo,smokeLevel,co2Level,status;
 
@@ -24,7 +19,7 @@ public class SensorDataController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
 
         try {
-            List<SensorDTO> sensors = sensorController.getAllSensors();
+            List<SensorDTO> sensors = SensorController.getAllSensors();
             for (SensorDTO sensor:sensors
             ) {
                 System.out.println(sensor.getSensorID());
