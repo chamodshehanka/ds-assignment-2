@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<AnchorPane id="rooms" prefHeight="713.0" prefWidth="1219.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.PrimaryController">
+<AnchorPane id="sensors" prefHeight="713.0" prefWidth="1219.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.PrimaryController">
     <children>
         <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Pricing Tables Design" />
         <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
@@ -41,7 +41,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -51,7 +51,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Limited download quota" />
@@ -61,7 +61,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Cash on delivery" />
@@ -71,7 +71,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/Delete.png" />
+                                                        <Image url="@../../Images/Delete.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="All times updates" />
@@ -81,7 +81,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/Delete.png" />
+                                                        <Image url="@../../Images/Delete.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited access to all files" />
@@ -91,7 +91,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/Delete.png" />
+                                                        <Image url="@../../Images/Delete.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -101,7 +101,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="205.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Allowed exclusion per sale" />
@@ -137,7 +137,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -147,7 +147,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Limited download quota" />
@@ -157,7 +157,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Cash on delivery" />
@@ -167,7 +167,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="All times updates" />
@@ -177,7 +177,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/Delete.png" />
+                                                        <Image url="@../../Images/Delete.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited access to all files" />
@@ -187,7 +187,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/Delete.png" />
+                                                        <Image url="@../../Images/Delete.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -197,7 +197,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="205.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Allowed exclusion per sale" />
@@ -233,7 +233,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -243,7 +243,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Limited download quota" />
@@ -253,7 +253,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Cash on delivery" />
@@ -263,7 +263,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="All times updates" />
@@ -273,7 +273,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited access to all files" />
@@ -283,7 +283,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/Delete.png" />
+                                                        <Image url="@../../Images/Delete.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -293,7 +293,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="205.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Allowed exclusion per sale" />
@@ -329,7 +329,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -339,7 +339,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Limited download quota" />
@@ -349,7 +349,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Cash on delivery" />
@@ -359,7 +359,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="All times updates" />
@@ -369,7 +369,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited access to all files" />
@@ -379,7 +379,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="204.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Unlimited  Storage" />
@@ -389,7 +389,7 @@
                                             <children>
                                                 <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@Images/check.png" />
+                                                        <Image url="@../../Images/check.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label contentDisplay="CENTER" prefHeight="41.0" prefWidth="205.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Allowed exclusion per sale" />

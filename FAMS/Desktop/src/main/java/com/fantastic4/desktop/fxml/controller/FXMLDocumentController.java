@@ -34,10 +34,10 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //Load all fxmls in a cache
         try {
-            rooms = FXMLLoader.load(getClass().getResource("/com/fantastic4/roommanager.fxml"));
-            sensors = FXMLLoader.load(getClass().getResource("/com/fantastic4/sensormanager.fxml"));
-            profile = FXMLLoader.load(getClass().getResource("/com/fantastic4/profile.fxml"));
-            dashboard = FXMLLoader.load(getClass().getResource("/com/fantastic4/livedashboard.fxml"));
+            rooms = FXMLLoader.load(getClass().getResource("/com/fantastic4/desktop/fxml/ui/roommanager.fxml"));
+            sensors = FXMLLoader.load(getClass().getResource("/com/fantastic4/desktop/fxml/ui/sensormanager.fxml"));
+            profile = FXMLLoader.load(getClass().getResource("/com/fantastic4/desktop/fxml/ui/profile.fxml"));
+            dashboard = FXMLLoader.load(getClass().getResource("/com/fantastic4/desktop/fxml/ui/livedashboard.fxml"));
             setNode(dashboard);
         } catch (IOException ex) {
             ex.printStackTrace();
