@@ -1,6 +1,5 @@
 package com.fantastic4.restapi.controller;
 
-import com.fantastic4.restapi.dto.Admin;
 import com.fantastic4.restapi.dto.Room;
 import com.fantastic4.restapi.dto.Sensor;
 import com.fantastic4.restapi.dto.SensorData;

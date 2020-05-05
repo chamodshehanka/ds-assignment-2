@@ -39,6 +39,7 @@ public class SensorBOImpl implements SensorBO {
 
     @Override
     public List<SensorDTO> getAllSensors() throws Exception {
+        System.out.println("Inside getAllSensors SensorBO");
         return sensorRepository.findAll();
     }
 

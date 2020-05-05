@@ -26,7 +26,30 @@ public class SensorController {
         return sensorService.updateSensor(sensorDTO);
     }
 
+    public static List<SensorDTO> getAllSensors() throws Exception {
+        sensorService = (SensorService) ProxyHandler.getInstance()
+                .getService(ServicesFactory.ServicesType.SENSOR);
+
+        return sensorService.getAllSensors();
+    }
+
+
+    public static SensorDTO getSensorByID(String id) throws Exception {
+        sensorService = (SensorService) ProxyHandler.getInstance()
+                .getService(ServicesFactory.ServicesType.SENSOR);
+
+        return sensorService.findSensorByID(id);
+    }
+
+    public static boolean deleteSensor(String id) throws Exception {
+        sensorService = (SensorService) ProxyHandler.getInstance()
+                .getService(ServicesFactory.ServicesType.SENSOR);
+
+        return sensorService.deleteSensor(id);
+    }
+
     public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
+        System.out.println("Inside getSensorData Controller");
         sensorService = (SensorService) ProxyHandler.getInstance()
                 .getService(ServicesFactory.ServicesType.SENSOR);
 

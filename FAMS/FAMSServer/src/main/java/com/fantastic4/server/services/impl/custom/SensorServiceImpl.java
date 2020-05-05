@@ -41,6 +41,7 @@ public class SensorServiceImpl extends UnicastRemoteObject implements SensorServ
 
     @Override
     public List<SensorDTO> getAllSensors() throws Exception {
+        System.out.println("Inside getAllSensors SensorServiceImpl");
         return sensorBO.getAllSensors();
     }
 

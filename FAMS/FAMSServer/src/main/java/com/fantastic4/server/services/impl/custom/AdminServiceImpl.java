@@ -2,10 +2,8 @@ package com.fantastic4.server.services.impl.custom;
 
 import com.fantastic4.common.dto.AdminDTO;
 import com.fantastic4.common.services.custom.AdminService;
-import com.fantastic4.common.services.custom.SensorService;
 import com.fantastic4.server.business.BOFactory;
 import com.fantastic4.server.business.custom.AdminBO;
-import com.fantastic4.server.business.custom.SensorBO;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

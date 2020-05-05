@@ -7,16 +7,14 @@ public class Sensor {
     private String sensorID;
     private int floorNo;
     private int roomNo;
-    private List<SensorData> sensorData;
 
     public Sensor() {
     }
 
-    public Sensor(String sensorID, int floorNo, int roomNo, List<SensorData> sensorData) {
+    public Sensor(String sensorID, int floorNo, int roomNo) {
         this.sensorID = sensorID;
         this.floorNo = floorNo;
         this.roomNo = roomNo;
-        this.sensorData = sensorData;
     }
 
     public String getSensorID() {
@@ -43,11 +41,4 @@ public class Sensor {
         this.roomNo = roomNo;
     }
 
-    public List<SensorData> getSensorData() {
-        return sensorData;
-    }
-
-    public void setSensorData(List<SensorData> sensorData) {
-        this.sensorData = sensorData;
-    }
 }
