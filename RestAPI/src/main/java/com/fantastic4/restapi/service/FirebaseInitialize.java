@@ -289,4 +289,9 @@ public class FirebaseInitialize {
 
         return adminArrayList;
     }
+
+    public String login(Admin admin) {
+
+        return "true";
+    }
 }

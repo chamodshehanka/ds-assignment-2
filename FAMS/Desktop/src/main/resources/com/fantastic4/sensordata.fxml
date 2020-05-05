@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="359.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.SensorDataController">
    <children>
-      <Text layoutX="97.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor Name">
+      <Text fx:id="sensorName" layoutX="97.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor Name">
          <font>
             <Font size="24.0" />
          </font>
@@ -26,7 +26,7 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Text fx:id="floorNo" layoutX="184.515625" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Floor No" AnchorPane.bottomAnchor="255.0" AnchorPane.rightAnchor="40.0">
+      <Text fx:id="floorNo" layoutX="184.515625" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Floor No" AnchorPane.rightAnchor="40.0">
          <font>
             <Font size="24.0" />
          </font>

@@ -1,10 +1,11 @@
+com/fantastic4/desktop/proxy/ProxyHandler$1.class
+com/fantastic4/desktop/proxy/ProxyHandler.class
 com/fantastic4/desktop/fxml/controller/PrimaryController.class
-com/fantastic4/desktop/fxml/controller/SecondaryController.class
 com/fantastic4/desktop/main/App.class
 module-info.class
-com/fantastic4/desktop/proxy/ProxyHandler$1.class
-com/fantastic4/desktop/controller/SensorController.class
 com/fantastic4/desktop/fxml/controller/SensorDataController.class
-com/fantastic4/desktop/proxy/ProxyHandler.class
+com/fantastic4/desktop/fxml/controller/SecondaryController.class
+com/fantastic4/desktop/controller/SensorController.class
+com/fantastic4/desktop/controller/AdminController.class
 com/fantastic4/desktop/main/Dashboard.class
 com/fantastic4/desktop/fxml/controller/FXMLDocumentController.class
