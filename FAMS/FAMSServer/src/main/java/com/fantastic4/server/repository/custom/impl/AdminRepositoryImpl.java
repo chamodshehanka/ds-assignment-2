@@ -1,7 +1,6 @@
 package com.fantastic4.server.repository.custom.impl;
 
 import com.fantastic4.common.dto.AdminDTO;
-import com.fantastic4.common.dto.SensorDTO;
 import com.fantastic4.server.repository.custom.AdminRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

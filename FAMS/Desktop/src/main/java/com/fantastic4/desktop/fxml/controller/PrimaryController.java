@@ -13,7 +13,7 @@ public class PrimaryController {
     @FXML
     private TextField email;
     @FXML
-    private PasswordField password;
+    private TextField password;
 
     @FXML
     private void switchToSecondary() throws Exception {

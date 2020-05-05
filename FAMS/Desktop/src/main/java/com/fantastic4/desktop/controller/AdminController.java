@@ -1,10 +1,8 @@
 package com.fantastic4.desktop.controller;
 
 import com.fantastic4.common.dto.AdminDTO;
-import com.fantastic4.common.dto.SensorDTO;
 import com.fantastic4.common.services.ServicesFactory;
 import com.fantastic4.common.services.custom.AdminService;
-import com.fantastic4.common.services.custom.SensorService;
 import com.fantastic4.desktop.proxy.ProxyHandler;
 
 import java.util.List;

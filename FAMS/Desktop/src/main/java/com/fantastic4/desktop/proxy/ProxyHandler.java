@@ -6,16 +6,22 @@ import com.fantastic4.common.services.custom.AdminService;
 import com.fantastic4.common.services.custom.SensorService;
 
 import java.rmi.Naming;
+import java.rmi.RMISecurityManager;
 
-public class ProxyHandler implements ServicesFactory {
+public class ProxyHandler implements ServicesFactory{
 
     private static ProxyHandler proxyHandler;
     private SensorService sensorService;
     private AdminService adminService;
+    String host = "localhost";
 
     private ProxyHandler() {
         try {
-            ServicesFactory servicesFactory = (ServicesFactory) Naming.lookup("rmi://localhost:5050/fams");
+            System.setProperty("java.security.policy", "file:./client.policy");
+//            if(System.getSecurityManager() == null ){
+//                System.setSecurityManager( new RMISecurityManager() );
+//            }
+            ServicesFactory servicesFactory = (ServicesFactory) Naming.lookup("//localhost:5050/fams");
             sensorService = (SensorService) servicesFactory.getService(ServicesType.SENSOR);
             adminService = (AdminService) servicesFactory.getService(ServicesType.ADMIN);
         } catch (Exception e) {
