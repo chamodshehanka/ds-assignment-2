@@ -105,7 +105,6 @@ public class FirebaseInitialize {
         if (document.exists()) {
             sensorData = document.toObject(SensorData.class);
         }
-
         return sensorData;
     }
 

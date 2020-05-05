@@ -4,7 +4,6 @@ import com.fantastic4.common.dto.AdminDTO;
 import com.fantastic4.server.business.custom.AdminBO;
 import com.fantastic4.server.repository.RepositoryFactory;
 import com.fantastic4.server.repository.custom.AdminRepository;
-import com.fantastic4.server.repository.custom.SensorRepository;
 
 import java.util.List;
 

@@ -25,9 +25,8 @@
 
     <modules>
         <module>FAMSCommon</module>
-        <module>FAMSServer</module>
-        <module>FAMSDesktop</module>
         <module>Desktop</module>
+        <module>FAMSServer</module>
     </modules>
 
 </project>

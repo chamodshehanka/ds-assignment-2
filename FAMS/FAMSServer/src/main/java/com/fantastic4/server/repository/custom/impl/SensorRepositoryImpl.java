@@ -53,6 +53,7 @@ public class SensorRepositoryImpl implements SensorRepository {
 
     @Override
     public List<SensorDTO> findAll() throws IOException, InterruptedException {
+        System.out.println("Inside getAllSensors SensorRepository");
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/getAllSensors"))
                 .build();
