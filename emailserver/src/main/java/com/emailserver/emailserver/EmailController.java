@@ -14,7 +14,7 @@ public class EmailController {
 	@RequestMapping("/send-mail")
 	public void sendMail() throws MessagingException {
 		
-		emailAlert.send("afirealert@gmail.com", "Fire Alert !", "Test");
+		emailAlert.send("afirealert@gmail.com", "Fire Alert !", "This is an emergency fire alert!!!");
 		
 	}
 
