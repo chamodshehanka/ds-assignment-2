@@ -11,4 +11,9 @@ public class PrimaryController {
     private void switchToSecondary() throws IOException {
         App.setRoot("fxmldocument");
     }
+
+    @FXML
+    private void switchToTest() throws IOException{
+        App.setRoot("sensordata");
+    }
 }

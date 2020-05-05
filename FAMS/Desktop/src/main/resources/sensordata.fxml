@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="359.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.SensorDataController">
+   <children>
+      <Text fx:id="sensorName" layoutX="97.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor Name">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="28.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Floor" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="30.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="28.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smoke Level" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="floorNo" layoutX="184.515625" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Floor No" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="roomNo" layoutX="173.72265625" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room No" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="smokeLevel" layoutX="139.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smoke Level" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="25.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Level" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="co2Level" layoutX="172.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Level" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="28.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="status" layoutX="172.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -95,7 +95,9 @@ public class FirebaseInitialize {
     public SensorData getSensorDataByID(String id) throws ExecutionException, InterruptedException {
         DocumentReference documentReference = firestore
                 .collection("sensorData")
-                .document(id);
+                .document("sensorData")
+                .collection(id)
+                .document("PBMFtgsGm3aivlibW54b");
         ApiFuture<DocumentSnapshot> future = documentReference.get();
         SensorData sensorData = null;
 
