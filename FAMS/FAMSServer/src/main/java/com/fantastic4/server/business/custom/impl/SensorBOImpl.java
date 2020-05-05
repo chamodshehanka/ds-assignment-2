@@ -44,6 +44,6 @@ public class SensorBOImpl implements SensorBO {
 
     @Override
     public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
-        return null;
+        return sensorRepository.getSensorData(sensorID);
     }
 }

@@ -2,6 +2,7 @@ package com.fantastic4.server.services.impl;
 
 import com.fantastic4.common.services.ServicesFactory;
 import com.fantastic4.common.services.SuperService;
+import com.fantastic4.server.services.impl.custom.AdminServiceImpl;
 import com.fantastic4.server.services.impl.custom.SensorServiceImpl;
 
 import java.rmi.RemoteException;
@@ -23,6 +24,7 @@ public class ServicesFactoryImpl extends UnicastRemoteObject implements Services
     public SuperService getService(ServicesType servicesType) throws Exception {
         switch (servicesType){
             case SENSOR: return new SensorServiceImpl();
+            case ADMIN: return new AdminServiceImpl();
             default: return null;
         }
     }
