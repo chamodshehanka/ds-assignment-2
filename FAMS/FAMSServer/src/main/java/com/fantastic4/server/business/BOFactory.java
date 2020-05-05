@@ -1,10 +1,12 @@
 package com.fantastic4.server.business;
 
+import com.fantastic4.server.business.custom.impl.AdminBOImpl;
 import com.fantastic4.server.business.custom.impl.SensorBOImpl;
 
 public class BOFactory {
     public enum BOTypes{
-        SENSOR
+        SENSOR,
+        ADMIN
     }
 
     private BOFactory() {
@@ -21,6 +23,7 @@ public class BOFactory {
     public SuperBO getBOFactory(BOTypes boTypes){
         switch (boTypes){
             case SENSOR: return new SensorBOImpl();
+            case ADMIN: return new AdminBOImpl();
             default:return null;
         }
     }

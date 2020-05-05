@@ -1,28 +1,22 @@
 package com.fantastic4.common.dto;
 
+import java.util.List;
+
 public class SensorDTO implements SuperDTO {
 
     private String sensorID;
-    private String roomNo,floorNo,co2Level;
+    private int floorNo;
+    private int roomNo;
+    private List<SensorDataDTO> sensorData;
 
     public SensorDTO() {
     }
 
-    public SensorDTO(String sensorID, String roomNo, String floorNo, String co2Level) {
+    public SensorDTO(String sensorID, int floorNo, int roomNo, List<SensorDataDTO> sensorData) {
         this.sensorID = sensorID;
-        this.roomNo = roomNo;
         this.floorNo = floorNo;
-        this.co2Level = co2Level;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                "sensorID:'" + sensorID + '\'' +
-                ", roomNo:'" + roomNo + '\'' +
-                ", floorNo:'" + floorNo + '\'' +
-                ", co2Level:'" + co2Level + '\'' +
-                '}';
+        this.roomNo = roomNo;
+        this.sensorData = sensorData;
     }
 
     public String getSensorID() {
@@ -33,27 +27,27 @@ public class SensorDTO implements SuperDTO {
         this.sensorID = sensorID;
     }
 
-    public String getRoomNo() {
-        return roomNo;
-    }
-
-    public void setRoomNo(String roomNo) {
-        this.roomNo = roomNo;
-    }
-
-    public String getFloorNo() {
+    public int getFloorNo() {
         return floorNo;
     }
 
-    public void setFloorNo(String floorNo) {
+    public void setFloorNo(int floorNo) {
         this.floorNo = floorNo;
     }
 
-    public String getCo2Level() {
-        return co2Level;
+    public int getRoomNo() {
+        return roomNo;
     }
 
-    public void setCo2Level(String co2Level) {
-        this.co2Level = co2Level;
+    public void setRoomNo(int roomNo) {
+        this.roomNo = roomNo;
+    }
+
+    public List<SensorDataDTO> getSensorData() {
+        return sensorData;
+    }
+
+    public void setSensorData(List<SensorDataDTO> sensorData) {
+        this.sensorData = sensorData;
     }
 }

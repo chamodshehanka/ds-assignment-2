@@ -2,4 +2,5 @@ afirealert@gmail.com
 fantastic4!
 
 
-http://localhost:8080/send-mail
+http://localhost:9090/send-mail
+http://localhost:9091/send-sms

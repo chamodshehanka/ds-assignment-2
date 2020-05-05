@@ -1,9 +1,12 @@
 package com.fantastic4.desktop.controller;
 
-import com.fantastic4.desktop.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.desktop.proxy.ProxyHandler;
-import com.fantastic4.desktop.services.ServicesFactory;
-import com.fantastic4.desktop.services.custom.SensorService;
+import com.fantastic4.common.services.ServicesFactory;
+import com.fantastic4.common.services.custom.SensorService;
+
+import java.util.List;
 
 public class SensorController {
 
@@ -21,6 +24,13 @@ public class SensorController {
                 .getService(ServicesFactory.ServicesType.SENSOR);
 
         return sensorService.updateSensor(sensorDTO);
+    }
+
+    public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
+        sensorService = (SensorService) ProxyHandler.getInstance()
+                .getService(ServicesFactory.ServicesType.SENSOR);
+
+        return sensorService.getSensorData(sensorID);
     }
 
 }
