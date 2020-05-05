@@ -1,6 +1,7 @@
 package com.fantastic4.server.business.custom.impl;
 
 import com.fantastic4.common.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.server.business.custom.SensorBO;
 import com.fantastic4.server.repository.RepositoryFactory;
 import com.fantastic4.server.repository.custom.SensorRepository;
@@ -39,5 +40,10 @@ public class SensorBOImpl implements SensorBO {
     @Override
     public List<SensorDTO> getAllSensors() throws Exception {
         return sensorRepository.findAll();
+    }
+
+    @Override
+    public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
+        return null;
     }
 }

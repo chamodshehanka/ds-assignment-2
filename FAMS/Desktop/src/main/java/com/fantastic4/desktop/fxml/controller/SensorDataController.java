@@ -1,7 +1,7 @@
 package com.fantastic4.desktop.fxml.controller;
 
 import com.fantastic4.desktop.controller.SensorController;
-import com.fantastic4.desktop.dto.SensorDataDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

@@ -2,6 +2,7 @@ module com.fantastic4 {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.rmi;
+    requires FAMSCommon;
 
     opens com.fantastic4 to javafx.fxml;
     opens com.fantastic4.desktop.main to javafx.graphics;
