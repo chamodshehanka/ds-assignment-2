@@ -1,12 +1,17 @@
 package com.fantastic4.server.repository;
 
 import com.fantastic4.server.repository.custom.impl.AdminRepositoryImpl;
+import com.fantastic4.server.repository.custom.impl.FloorRepositoryImpl;
+import com.fantastic4.server.repository.custom.impl.RoomRepositoryImpl;
 import com.fantastic4.server.repository.custom.impl.SensorRepositoryImpl;
 
 public class RepositoryFactory {
     public enum RepositoryFactoryTypes{
         SENSOR,
-        ADMIN;
+        ADMIN,
+        ROOM,
+        FLOOR,
+        SENSOR_DATA
     }
 
     private RepositoryFactory() {
@@ -24,6 +29,8 @@ public class RepositoryFactory {
         switch (repositoryFactoryTypes){
             case SENSOR: return new SensorRepositoryImpl();
             case ADMIN: return new AdminRepositoryImpl();
+            case ROOM: return new RoomRepositoryImpl();
+            case FLOOR: return new FloorRepositoryImpl();
             default: return null;
         }
     }
