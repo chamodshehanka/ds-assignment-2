@@ -96,29 +96,4 @@ public class SensorController {
         return firebaseInitialize.getAllLatestSensorData();
     }
 
-    @PostMapping("/createAdmin")
-    public String createAdmin(@RequestBody Admin admin) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.addAdmin(admin);
-    }
-
-    @DeleteMapping("/deleteAdmin")
-    public String deleteAdmin(@RequestParam String id) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.deleteAdmin(id);
-    }
-
-    @PutMapping("/updateAdmin")
-    public String updateAdmin(@RequestBody Admin admin) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.updateAdmin(admin);
-    }
-
-    @GetMapping("/getAdmin")
-    public Admin getAdmin(@RequestParam String id) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.getAdminByID(id);
-    }
-
-    @GetMapping("/getAllAdmins")
-    public ArrayList<Admin> getAllAdmins() throws ExecutionException, InterruptedException {
-        return firebaseInitialize.getAllAdmins();
-    }
-
 }

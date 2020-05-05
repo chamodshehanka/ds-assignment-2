@@ -1,6 +1,7 @@
 package com.fantastic4.server.business.custom;
 
 import com.fantastic4.common.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.server.business.SuperBO;
 
 import java.util.List;
@@ -16,5 +17,7 @@ public interface SensorBO extends SuperBO {
     SensorDTO getSensorByID(String sensorID) throws Exception;
 
     List<SensorDTO> getAllSensors() throws Exception;
+
+    List<SensorDataDTO> getSensorData(String sensorID) throws Exception;
 
 }

@@ -1,6 +1,7 @@
 package com.fantastic4.common.services.custom;
 
 import com.fantastic4.common.dto.SensorDTO;
+import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.common.services.SuperService;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public interface SensorService extends SuperService {
     SensorDTO findSensorByID(String sensorID) throws Exception;
 
     List<SensorDTO> getAllSensors() throws Exception;
+
+    List<SensorDataDTO> getSensorData(String sensorID) throws Exception;
 
     // Add Observers later
 
