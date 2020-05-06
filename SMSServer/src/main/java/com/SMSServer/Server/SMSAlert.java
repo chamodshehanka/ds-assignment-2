@@ -19,7 +19,7 @@ public class SMSAlert implements Serializable {
     
     public void sendsms(String... args) throws Exception {
         Twilio.init("AC591f0ae975834806acebdeee5239c449", "29cad427d6840ee62626fa0b437ddfa1");
-        Message.creator(new PhoneNumber("+94778702750"), new PhoneNumber("+12183963759"), "This is an emergency fire alert!!!").create();
+        Message.creator(new PhoneNumber("+94714331418"), new PhoneNumber("+12183963759"), "This is an emergency fire alert!!!").create();
 }
 }
 
