@@ -6,5 +6,4 @@ module FAMSServer {
     requires FAMSCommon;
     requires com.fasterxml.jackson.databind;
     requires json;
-    requires org.hibernate.orm.core;
 }

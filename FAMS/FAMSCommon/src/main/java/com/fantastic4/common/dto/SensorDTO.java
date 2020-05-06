@@ -7,16 +7,20 @@ public class SensorDTO implements SuperDTO {
     private String sensorID;
     private int floorNo;
     private int roomNo;
-    private List<SensorDataDTO> sensorData;
+    private int latestCO2Level;
+    private int latestSmokeLevel;
+    private boolean status;
 
     public SensorDTO() {
     }
 
-    public SensorDTO(String sensorID, int floorNo, int roomNo, List<SensorDataDTO> sensorData) {
+    public SensorDTO(String sensorID, int floorNo, int roomNo, int co2, int smoke,boolean status) {
         this.sensorID = sensorID;
         this.floorNo = floorNo;
         this.roomNo = roomNo;
-        this.sensorData = sensorData;
+        this.latestCO2Level = co2;
+        this.latestSmokeLevel = smoke;
+        this.status = status;
     }
 
     public String getSensorID() {
@@ -43,11 +47,28 @@ public class SensorDTO implements SuperDTO {
         this.roomNo = roomNo;
     }
 
-    public List<SensorDataDTO> getSensorData() {
-        return sensorData;
+    public void setLatestCO2Level(int co2Level) {
+        this.latestCO2Level = co2Level;
     }
 
-    public void setSensorData(List<SensorDataDTO> sensorData) {
-        this.sensorData = sensorData;
+    public int getLatestCO2Level() {
+        return latestCO2Level;
     }
+
+    public void setLatestSmokeLevel(int smokeLevel) {
+        this.latestSmokeLevel = smokeLevel;
+    }
+
+    public int getLatestSmokeLevel() {
+        return latestSmokeLevel;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
 }
