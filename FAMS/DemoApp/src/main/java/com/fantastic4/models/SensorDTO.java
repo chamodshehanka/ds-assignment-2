@@ -1,6 +1,6 @@
 package com.fantastic4.models;
 
-public class Sensor{
+public class SensorDTO {
 
     private String sensorID;
     private int floorNo;
@@ -9,10 +9,10 @@ public class Sensor{
     private int latestSmokeLevel;
     private boolean status;
 
-    public Sensor() {
+    public SensorDTO() {
     }
 
-    public Sensor(String sensorID, int floorNo, int roomNo, int co2, int smoke,boolean status) {
+    public SensorDTO(String sensorID, int floorNo, int roomNo, int co2, int smoke, boolean status) {
         this.sensorID = sensorID;
         this.floorNo = floorNo;
         this.roomNo = roomNo;

@@ -1,6 +1,6 @@
 package com.fantastic4;
 
-import com.fantastic4.models.Sensor;
+import com.fantastic4.models.SensorDTO;
 import com.fantastic4.models.SensorData;
 
 import java.io.IOException;
@@ -20,25 +20,39 @@ public class SendSensorData extends TimerTask{
 
     public void run(){
         try {
-            List<Sensor> sensors = getSensors();
-            for (Sensor sensor:sensors
+            List<SensorDTO> sensorDTOS = getSensors();
+            for (SensorDTO sensorDTO : sensorDTOS
                  ) {
                 SensorData sensorData = new SensorData();
-                sensorData.setSensorID(sensor.getSensorID());
+                sensorData.setSensorID(sensorDTO.getSensorID());
                 sensorData.setCo2Level(new Random().nextInt((10-1)+1)+1);
                 sensorData.setSmokeLevel(new Random().nextInt((10-1)+1)+1);
                 sensorData.setDate(Long.toString(System.currentTimeMillis()));
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public List<Sensor> getSensors() throws IOException,InterruptedException{
-        List<Sensor> sensorDTOList = new ArrayList<>();
-        //Implement HTTP
+    public List<SensorDTO> getSensors() throws IOException,InterruptedException{
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/getAllSensors"))
+                .build();
+
+        List<SensorDTO> sensorDTOList = new ArrayList<>();
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+        JSONArray jsonArray = new JSONArray(response.body());
+        ObjectMapper mapper = new ObjectMapper();
+        jsonArray.forEach(object -> {
+            try {
+                sensorDTOList.add(mapper.readValue(object.toString(), SensorDTO.class));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        });
+
+
         return sensorDTOList;
     }
 
