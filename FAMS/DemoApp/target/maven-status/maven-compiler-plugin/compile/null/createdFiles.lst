@@ -1,0 +1,5 @@
+com/fantastic4/App.class
+com/fantastic4/models/Sensor.class
+module-info.class
+com/fantastic4/models/SensorData.class
+com/fantastic4/SendSensorData.class
