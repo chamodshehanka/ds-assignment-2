@@ -40,31 +40,6 @@ public class SensorController {
         return firebaseInitialize.getAllSensors();
     }
 
-    @PostMapping("/createRoom")
-    public String addRoom(@RequestBody Room room) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.addRoom(room);
-    }
-
-    @DeleteMapping("/deleteRoom")
-    public String deleteRoom(@RequestParam String roomID) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.deleteRoom(roomID);
-    }
-
-    @PutMapping("/updateRoom")
-    public String updateRoom(@RequestBody Room room) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.updateRoom(room);
-    }
-
-    @GetMapping("/getRoom")
-    public Room getRoom(@RequestParam String roomID) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.getRoomByID(roomID);
-    }
-
-    @GetMapping("/getAllRooms")
-    public ArrayList<Room> getAllRooms() throws ExecutionException, InterruptedException {
-        return firebaseInitialize.getAllRooms();
-    }
-
     @PostMapping("/createSensorData")
     public String createSensorData(SensorData sensorData) throws ExecutionException, InterruptedException {
         return firebaseInitialize.addSensorData(sensorData);
