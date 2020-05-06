@@ -39,6 +39,12 @@ public class FirebaseInitialize {
     }
 
     public String addSensor(Sensor sensor) throws ExecutionException, InterruptedException {
+        System.out.println(sensor.getSensorID());
+        System.out.println(sensor.getFloorNo());
+        System.out.println(sensor.getRoomNo());
+        System.out.println(sensor.getLatestCO2Level());
+        System.out.println(sensor.getLatestSmokeLevel());
+
         ApiFuture<WriteResult> collectionApiFuture = firestore
                 .collection("sensors")
                 .document(sensor.getSensorID())

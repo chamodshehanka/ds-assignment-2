@@ -54,7 +54,6 @@ public class LiveDashboardController implements Initializable {
     @FXML
     private TableColumn<SensorTableModel, String> colSensorStatus;
 
-
     private List<SensorDTO> iSensors = new ArrayList<>();
     private List<SensorDTO> tSensors = new ArrayList<>();
     private List<RoomDTO> tRooms = new ArrayList<>();
@@ -89,6 +88,7 @@ public class LiveDashboardController implements Initializable {
     }
 
     private void loadSensorTableView(){
+
         colSensorID.setCellValueFactory(new PropertyValueFactory<>("sensorID"));
         colFloor.setCellValueFactory(new PropertyValueFactory<>("floor"));
         colRoom.setCellValueFactory(new PropertyValueFactory<>("room"));
@@ -119,8 +119,6 @@ public class LiveDashboardController implements Initializable {
                 }else{
                     sensorTableModel.setSensorStatus("INACTIVE");
                 }
-
-
 
                 sensorTableModelObservableList.add(sensorTableModel);
             }

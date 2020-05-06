@@ -6,9 +6,12 @@ import com.fantastic4.server.services.impl.ServicesFactoryImpl;
 import com.fantastic4.server.services.impl.custom.SensorServiceImpl;
 
 import javax.swing.*;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ServerStart {
     public static void main(String[] args){
@@ -32,6 +35,9 @@ public class ServerStart {
                 System.out.println(sensorDTO.toString());
 
                 System.out.println(sensorService.addSensor(sensorDTO));
+                Timer timer = new Timer();
+                timer.schedule(new checkStatus(),0,5000);
+
 
             } else {
                 JOptionPane.showMessageDialog(null,
@@ -39,6 +45,27 @@ public class ServerStart {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    static class checkStatus extends TimerTask{
+
+        @Override
+        public void run() {
+            try {
+                SensorServiceImpl sensorService = new SensorServiceImpl();
+                List<SensorDTO> sensorDTOList = sensorService.getAllSensors();
+                for (SensorDTO sensor:sensorDTOList
+                     ) {
+                    if(sensor.getLatestCO2Level() >= 5 || sensor.getLatestSmokeLevel() >= 5){
+                        //Implement and Call Endpoint
+                    }
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }
