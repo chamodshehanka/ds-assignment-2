@@ -46,11 +46,6 @@ public class SensorServiceImpl extends UnicastRemoteObject implements SensorServ
     }
 
     @Override
-    public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
-        return sensorBO.getSensorData(sensorID);
-    }
-
-    @Override
     public boolean reserve(Object id) throws Exception {
         return false;
     }

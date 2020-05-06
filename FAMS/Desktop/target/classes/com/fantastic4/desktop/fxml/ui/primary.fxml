@@ -11,7 +11,7 @@
          <children>
             <ImageView fitHeight="502.0" fitWidth="374.0" pickOnBounds="true">
                <image>
-                  <Image url="@Images/red-metal-box-3186166.jpg" />
+                  <Image url="@../../Images/red-metal-box-3186166.jpg" />
                </image></ImageView>
          </children>
       </VBox>

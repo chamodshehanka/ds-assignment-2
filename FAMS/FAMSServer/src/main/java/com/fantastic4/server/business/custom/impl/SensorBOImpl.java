@@ -43,8 +43,4 @@ public class SensorBOImpl implements SensorBO {
         return sensorRepository.findAll();
     }
 
-    @Override
-    public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
-        return sensorRepository.getSensorData(sensorID);
-    }
 }
