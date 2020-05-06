@@ -38,7 +38,7 @@
             </TextField>
          </children>
       </HBox>
-      <Button layoutX="400.0" layoutY="330.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: teal; -fx-background-radius: 10px;" text="Login" textFill="WHITE">
+      <Button layoutX="400.0" layoutY="330.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: teal; -fx-background-radius: 10px;" text="Login" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
@@ -48,6 +48,5 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="testBtn" layoutX="522.0" layoutY="414.0" mnemonicParsing="false" onAction="#switchToTest" text="Test" />
    </children>
 </AnchorPane>

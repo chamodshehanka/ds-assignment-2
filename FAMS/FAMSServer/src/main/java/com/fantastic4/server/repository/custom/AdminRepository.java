@@ -5,5 +5,5 @@ import com.fantastic4.server.repository.SuperRepository;
 
 public interface AdminRepository extends SuperRepository<AdminDTO, String> {
 
-    boolean login(AdminDTO adminDTO) throws Exception;
+    AdminDTO login(AdminDTO adminDTO) throws Exception;
 }
