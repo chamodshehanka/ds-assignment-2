@@ -24,6 +24,13 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public boolean save(RoomDTO roomDTO) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/createRoom"))
+                .POST(HttpRequest.BodyPublishers.ofString(roomDTO.toString()))
+                .build();
+
+        HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
+        System.out.println(response.statusCode());
         return false;
     }
 
@@ -44,6 +51,7 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public List<RoomDTO> findAll() throws Exception {
+
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/getAllRooms"))
                 .build();
