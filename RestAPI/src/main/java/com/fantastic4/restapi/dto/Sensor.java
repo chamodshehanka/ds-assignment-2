@@ -9,16 +9,18 @@ public class Sensor {
     private int roomNo;
     private int latestCO2Level;
     private int latestSmokeLevel;
+    private boolean status;
 
     public Sensor() {
     }
 
-    public Sensor(String sensorID, int floorNo, int roomNo, int latestCO2Level, int latestSmokeLevel) {
+    public Sensor(String sensorID, int floorNo, int roomNo, int latestCO2Level, int latestSmokeLevel, boolean status) {
         this.sensorID = sensorID;
         this.floorNo = floorNo;
         this.roomNo = roomNo;
         this.latestCO2Level = latestCO2Level;
         this.latestSmokeLevel = latestSmokeLevel;
+        this.status = status;
     }
 
     public String getSensorID() {
@@ -59,6 +61,14 @@ public class Sensor {
 
     public void setLatestSmokeLevel(int smokeLevel) {
         this.latestSmokeLevel = smokeLevel;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public boolean getStatus() {
+        return status;
     }
 
 }
