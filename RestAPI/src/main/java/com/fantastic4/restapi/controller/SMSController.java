@@ -23,7 +23,7 @@ public class SMSController {
 		
 		if(co2 > 5 || smoke > 5)
 		{
-			 String url = "http://localhost:9090/send-sms";
+			 String url = "http://localhost:9091/send-sms";
 		        return this.restTemplate.getForObject(url, String.class);
 		}
 		return null;
