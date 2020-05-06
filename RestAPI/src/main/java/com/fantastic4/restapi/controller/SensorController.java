@@ -1,6 +1,5 @@
 package com.fantastic4.restapi.controller;
 
-import com.fantastic4.restapi.dto.Room;
 import com.fantastic4.restapi.dto.Sensor;
 import com.fantastic4.restapi.dto.SensorData;
 import com.fantastic4.restapi.service.FirebaseInitialize;
@@ -21,7 +20,8 @@ public class SensorController {
     }
 
     @DeleteMapping("/deleteSensor")
-    public String removeSensor(@RequestBody String sensorID) throws ExecutionException, InterruptedException {
+    public String removeSensor(@RequestParam String sensorID) throws ExecutionException, InterruptedException {
+        System.out.println("Sensor ID ::: " + sensorID);
         return firebaseInitialize.deleteSensor(sensorID);
     }
 
@@ -31,7 +31,7 @@ public class SensorController {
     }
 
     @GetMapping("/getSensor")
-    public Sensor getSensor(@RequestBody String sensorID) throws ExecutionException, InterruptedException {
+    public Sensor getSensor(@RequestParam String sensorID) throws ExecutionException, InterruptedException {
         return firebaseInitialize.getSensorByID(sensorID);
     }
 

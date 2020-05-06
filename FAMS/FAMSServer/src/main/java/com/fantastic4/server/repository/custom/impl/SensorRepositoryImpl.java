@@ -36,8 +36,12 @@ public class SensorRepositoryImpl implements SensorRepository {
     }
 
     @Override
-    public boolean delete(String s) throws Exception {
-
+    public boolean delete(String id) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/deleteSensor?sensorID=" + id))
+                .DELETE().build();
+        HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
+        System.out.println(response + ":" + response.statusCode());
         return false;
     }
 
