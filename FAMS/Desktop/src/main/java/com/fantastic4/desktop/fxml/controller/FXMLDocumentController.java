@@ -80,7 +80,7 @@ public class FXMLDocumentController implements Initializable{
     @FXML
     private void switchRooms(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/fantastic4/desktop/fxml/ui/AdminRoomRegister.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/fantastic4/desktop/fxml/ui/roommanager.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Manage Rooms");
@@ -94,7 +94,7 @@ public class FXMLDocumentController implements Initializable{
     @FXML
     private void switchSensors(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/fantastic4/desktop/fxml/ui/AdminSensorRegister.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/fantastic4/desktop/fxml/ui/sensormanager.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Manage Sensors");
