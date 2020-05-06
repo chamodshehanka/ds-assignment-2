@@ -7,7 +7,7 @@ class Sensors extends Component {
   };
 
   componentDidMount() {
-    Axios.get('http://localhost:8080/getAllLatestSensorData')
+    Axios.get('http://localhost:8080/getAllSensors')
       .then((res) => {
         console.log(res.data);
         this.setState({

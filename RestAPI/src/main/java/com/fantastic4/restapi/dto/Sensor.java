@@ -1,7 +1,5 @@
 package com.fantastic4.restapi.dto;
 
-import java.util.List;
-
 public class Sensor {
 
     private String sensorID;
