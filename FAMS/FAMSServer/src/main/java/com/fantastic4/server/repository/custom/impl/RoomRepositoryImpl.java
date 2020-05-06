@@ -1,5 +1,6 @@
 package com.fantastic4.server.repository.custom.impl;
 
+import com.fantastic4.common.dto.AdminDTO;
 import com.fantastic4.common.dto.RoomDTO;
 import com.fantastic4.server.repository.custom.RoomRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
