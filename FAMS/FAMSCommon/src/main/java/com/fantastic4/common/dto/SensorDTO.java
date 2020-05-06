@@ -9,16 +9,18 @@ public class SensorDTO implements SuperDTO {
     private int roomNo;
     private int latestCO2Level;
     private int latestSmokeLevel;
+    private boolean status;
 
     public SensorDTO() {
     }
 
-    public SensorDTO(String sensorID, int floorNo, int roomNo, int co2, int smoke) {
+    public SensorDTO(String sensorID, int floorNo, int roomNo, int co2, int smoke,boolean status) {
         this.sensorID = sensorID;
         this.floorNo = floorNo;
         this.roomNo = roomNo;
         this.latestCO2Level = co2;
         this.latestSmokeLevel = smoke;
+        this.status = status;
     }
 
     public String getSensorID() {
@@ -59,6 +61,14 @@ public class SensorDTO implements SuperDTO {
 
     public int getLatestSmokeLevel() {
         return latestSmokeLevel;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public boolean getStatus() {
+        return status;
     }
 
 }
