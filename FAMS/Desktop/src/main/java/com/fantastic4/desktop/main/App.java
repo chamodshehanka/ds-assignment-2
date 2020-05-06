@@ -13,6 +13,8 @@ import java.io.IOException;
  */
 public class App extends Application {
 
+    private double xOffset = 0;
+    private double yOffset = 0;
     private static Scene scene;
 
     @Override
@@ -20,6 +22,17 @@ public class App extends Application {
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
+
+        scene.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        scene.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        });
+
     }
 
     public static void setRoot(String fxml) throws IOException {
@@ -32,7 +45,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 
 }
