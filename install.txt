@@ -1,6 +1,6 @@
 Installation Steps
 
-Step 1 - Start Rest API 
+Step 1 - Start Rest API by using npm start
 Step 2 - Start FAMSServer -> com.fantastic4.server.startup; -> ServerStart.java
 Step 3 - Start FAMSDesktop -> com.fantastic4.desktop.main; -> App.java
 Step 4 - Start WebClient
