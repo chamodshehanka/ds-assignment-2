@@ -24,12 +24,12 @@ public class SensorDTO implements SuperDTO {
     @Override
     public String toString() {
         return "{" +
-                "sensorID" + ":" + sensorID  +
+                "sensorID:'" + sensorID + '\'' +
                 ", floorNo:" + floorNo +
                 ", roomNo:" + roomNo +
                 ", latestCO2Level:" + latestCO2Level +
                 ", latestSmokeLevel:" + latestSmokeLevel +
-                ", status:" + status +
+                ", status=" + status +
                 '}';
     }
 

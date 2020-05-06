@@ -40,17 +40,17 @@ public class SendSensorData extends TimerTask{
                 .build();
 
         List<SensorDTO> sensorDTOList = new ArrayList<>();
-        HttpResponse<String> response =
-                client.send(request, HttpResponse.BodyHandlers.ofString());
-        JSONArray jsonArray = new JSONArray(response.body());
-        ObjectMapper mapper = new ObjectMapper();
-        jsonArray.forEach(object -> {
-            try {
-                sensorDTOList.add(mapper.readValue(object.toString(), SensorDTO.class));
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-        });
+//        HttpResponse<String> response =
+//                client.send(request, HttpResponse.BodyHandlers.ofString());
+//        JSONArray jsonArray = new JSONArray(response.body());
+//        ObjectMapper mapper = new ObjectMapper();
+//        jsonArray.forEach(object -> {
+//            try {
+//                sensorDTOList.add(mapper.readValue(object.toString(), SensorDTO.class));
+//            } catch (JsonProcessingException e) {
+//                e.printStackTrace();
+//            }
+//        });
 
 
         return sensorDTOList;

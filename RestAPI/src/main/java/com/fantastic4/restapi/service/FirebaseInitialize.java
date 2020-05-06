@@ -348,8 +348,23 @@ public class FirebaseInitialize {
         return floorArrayList;
     }
 
-    public String login(Admin admin) {
+    public String login(Admin admin) throws ExecutionException, InterruptedException {
+        DocumentReference documentReference = firestore
+                .collection("admins")
+                .document(admin.getAdminID());
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        Admin adminOb = null;
 
-        return "true";
+        DocumentSnapshot document = future.get();
+        if (document.exists()) {
+            adminOb = document.toObject(Admin.class);
+        }
+
+        assert adminOb != null;
+        if (admin.getPassword().equals(adminOb.getPassword()) ){
+            return "true";
+        }
+
+        return "false";
     }
 }

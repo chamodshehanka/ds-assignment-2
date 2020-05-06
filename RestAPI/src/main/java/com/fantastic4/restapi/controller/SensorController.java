@@ -16,11 +16,6 @@ public class SensorController {
 
     @PostMapping("/createSensor")
     public String addSensor(@RequestBody Sensor sensor) throws ExecutionException, InterruptedException {
-        System.out.println(sensor.getSensorID());
-        System.out.println(sensor.getFloorNo());
-        System.out.println(sensor.getRoomNo());
-        System.out.println(sensor.getLatestCO2Level());
-        System.out.println(sensor.getLatestSmokeLevel());
         return firebaseInitialize.addSensor(sensor);
     }
 
