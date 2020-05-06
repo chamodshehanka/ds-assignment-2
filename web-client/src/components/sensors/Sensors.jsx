@@ -2,12 +2,22 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 
 class Sensors extends Component {
+  interval = null;
   state = {
     sensors: [],
   };
 
   componentDidMount() {
-    Axios.get('http://localhost:8080/getAllLatestSensorData')
+    this.interval = setInterval(this.getData, 40000);
+    this.getData();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  getData = () => {
+    Axios.get('http://localhost:8080/getAllSensors')
       .then((res) => {
         console.log(res.data);
         this.setState({
@@ -15,7 +25,7 @@ class Sensors extends Component {
         });
       })
       .catch((err) => console.error(err));
-  }
+  };
 
   render() {
     return (
@@ -38,7 +48,8 @@ class Sensors extends Component {
                 key={i}
                 style={{
                   backgroundColor:
-                    sensorData.co2Level > 5 || sensorData.smokeLevel > 5
+                    sensorData.latestCO2Level > 5 ||
+                    sensorData.latestSmokeLevel > 5
                       ? '#e84118'
                       : 'teal',
                 }}
@@ -49,8 +60,8 @@ class Sensors extends Component {
                   Floor No: {sensorData.floorNo}
                   <br /> Room No: {sensorData.roomNo}
                 </td>
-                <td>{sensorData.smokeLevel}</td>
-                <td>{sensorData.co2Level}</td>
+                <td>{sensorData.latestSmokeLevel}</td>
+                <td>{sensorData.latestCO2Level}</td>
               </tr>
             ))}
           </tbody>

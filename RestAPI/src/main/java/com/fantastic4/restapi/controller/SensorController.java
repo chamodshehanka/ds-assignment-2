@@ -1,6 +1,5 @@
 package com.fantastic4.restapi.controller;
 
-import com.fantastic4.restapi.dto.Room;
 import com.fantastic4.restapi.dto.Sensor;
 import com.fantastic4.restapi.dto.SensorData;
 import com.fantastic4.restapi.service.FirebaseInitialize;
@@ -21,48 +20,24 @@ public class SensorController {
     }
 
     @DeleteMapping("/deleteSensor")
-    public String removeSensor(@RequestBody String sensorID) throws ExecutionException, InterruptedException {
+    public String removeSensor(@RequestParam String sensorID) throws ExecutionException, InterruptedException {
         return firebaseInitialize.deleteSensor(sensorID);
     }
 
     @PutMapping("/updateSensor")
     public String updateSensor(@RequestBody Sensor sensor) throws ExecutionException, InterruptedException {
+        System.out.println(sensor.getSensorID());
         return firebaseInitialize.updateSensor(sensor);
     }
 
     @GetMapping("/getSensor")
-    public Sensor getSensor(@RequestBody String sensorID) throws ExecutionException, InterruptedException {
+    public Sensor getSensor(@RequestParam String sensorID) throws ExecutionException, InterruptedException {
         return firebaseInitialize.getSensorByID(sensorID);
     }
 
     @GetMapping("/getAllSensors")
     public ArrayList<Sensor> getAllSensors() throws ExecutionException, InterruptedException {
         return firebaseInitialize.getAllSensors();
-    }
-
-    @PostMapping("/createRoom")
-    public String addRoom(@RequestBody Room room) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.addRoom(room);
-    }
-
-    @DeleteMapping("/deleteRoom")
-    public String deleteRoom(@RequestParam String roomID) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.deleteRoom(roomID);
-    }
-
-    @PutMapping("/updateRoom")
-    public String updateRoom(@RequestBody Room room) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.updateRoom(room);
-    }
-
-    @GetMapping("/getRoom")
-    public Room getRoom(@RequestParam String roomID) throws ExecutionException, InterruptedException {
-        return firebaseInitialize.getRoomByID(roomID);
-    }
-
-    @GetMapping("/getAllRooms")
-    public ArrayList<Room> getAllRooms() throws ExecutionException, InterruptedException {
-        return firebaseInitialize.getAllRooms();
     }
 
     @PostMapping("/createSensorData")

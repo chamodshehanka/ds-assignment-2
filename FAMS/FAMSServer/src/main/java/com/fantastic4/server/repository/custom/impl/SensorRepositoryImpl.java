@@ -1,7 +1,6 @@
 package com.fantastic4.server.repository.custom.impl;
 
 import com.fantastic4.common.dto.SensorDTO;
-import com.fantastic4.common.dto.SensorDataDTO;
 import com.fantastic4.server.repository.custom.SensorRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,13 +35,24 @@ public class SensorRepositoryImpl implements SensorRepository {
     }
 
     @Override
-    public boolean delete(String s) throws Exception {
+    public boolean delete(String id) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/deleteSensor?sensorID=" + id))
+                .DELETE().build();
+        HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
 
-        return false;
+        return response.statusCode() == 200;
     }
 
     @Override
     public boolean update(SensorDTO sensorDTO) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/updateSensor"))
+                .header("Content-Type", "application/json")
+                .PUT(HttpRequest.BodyPublishers.ofString(sensorDTO.toString()))
+                .build();
+        HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
+        System.out.println(response.statusCode());
         return false;
     }
 
@@ -53,7 +63,6 @@ public class SensorRepositoryImpl implements SensorRepository {
 
     @Override
     public List<SensorDTO> findAll() throws IOException, InterruptedException {
-        System.out.println("Inside getAllSensors SensorRepository");
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/getAllSensors"))
                 .build();

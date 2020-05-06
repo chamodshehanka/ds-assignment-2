@@ -25,14 +25,10 @@ public class PrimaryController {
         AdminDTO adminDTO = new AdminDTO();
         adminDTO.setEmail(email.getText());
         adminDTO.setPassword(email.getText());
-        boolean status = AdminController.login(adminDTO);
-        if(status){
+        AdminDTO admin = AdminController.login(adminDTO);
+        if(admin.getName()!=null){
             App.setRoot("fxmldocument");
         }
     }
 
-    @FXML
-    private void switchToTest() throws IOException{
-        App.setRoot("sensordata");
-    }
 }

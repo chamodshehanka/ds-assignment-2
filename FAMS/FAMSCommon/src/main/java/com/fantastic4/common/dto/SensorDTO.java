@@ -1,7 +1,5 @@
 package com.fantastic4.common.dto;
 
-import java.util.List;
-
 public class SensorDTO implements SuperDTO {
 
     private String sensorID;
@@ -21,6 +19,18 @@ public class SensorDTO implements SuperDTO {
         this.latestCO2Level = co2;
         this.latestSmokeLevel = smoke;
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "sensorID:'" + sensorID + '\'' +
+                ", floorNo:" + floorNo +
+                ", roomNo:" + roomNo +
+                ", latestCO2Level:" + latestCO2Level +
+                ", latestSmokeLevel:" + latestSmokeLevel +
+                ", status=" + status +
+                '}';
     }
 
     public String getSensorID() {

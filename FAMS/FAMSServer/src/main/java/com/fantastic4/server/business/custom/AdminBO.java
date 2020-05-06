@@ -17,5 +17,5 @@ public interface AdminBO extends SuperBO {
 
     List<AdminDTO> getAllAdmins() throws Exception;
 
-    boolean login(AdminDTO adminDTO) throws Exception;
+    AdminDTO login(AdminDTO adminDTO) throws Exception;
 }

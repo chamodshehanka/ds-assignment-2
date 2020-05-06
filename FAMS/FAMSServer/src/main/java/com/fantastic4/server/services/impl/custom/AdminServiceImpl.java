@@ -46,7 +46,7 @@ public class AdminServiceImpl extends UnicastRemoteObject implements AdminServic
     }
 
     @Override
-    public boolean login(AdminDTO adminDTO) throws Exception {
+    public AdminDTO login(AdminDTO adminDTO) throws Exception {
         return adminBO.login(adminDTO);
     }
 

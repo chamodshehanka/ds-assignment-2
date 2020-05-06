@@ -5,6 +5,7 @@ import com.fantastic4.server.repository.custom.AdminRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -72,16 +73,16 @@ public class AdminRepositoryImpl implements AdminRepository {
     }
 
     @Override
-    public boolean login(AdminDTO adminDTO) throws Exception{
+    public AdminDTO login(AdminDTO adminDTO) throws Exception{
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/login?email="+adminDTO.getEmail()+"&pass="+adminDTO.getPassword()))
                 .build();
-
-        boolean status = false;
         HttpResponse<String> response =
                 client.send(request, HttpResponse.BodyHandlers.ofString());
+        JSONObject jsonObject = new JSONObject(response.body());
+        ObjectMapper mapper = new ObjectMapper();
+        AdminDTO admin = mapper.readValue(jsonObject.toString(),AdminDTO.class);
 
-        status = response.body().isEmpty();
-        return status;
+        return admin;
     }
 }

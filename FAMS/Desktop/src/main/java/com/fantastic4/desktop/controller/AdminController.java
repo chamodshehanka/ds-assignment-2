@@ -46,7 +46,7 @@ public class AdminController {
         return adminService.findAdminByID(adminID);
     }
 
-    public static boolean login(AdminDTO adminDTO) throws Exception {
+    public static AdminDTO login(AdminDTO adminDTO) throws Exception {
         adminService = (AdminService) ProxyHandler.getInstance()
                 .getService(ServicesFactory.ServicesType.ADMIN);
 

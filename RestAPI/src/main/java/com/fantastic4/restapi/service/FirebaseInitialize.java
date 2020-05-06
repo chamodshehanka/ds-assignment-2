@@ -1,9 +1,6 @@
 package com.fantastic4.restapi.service;
 
-import com.fantastic4.restapi.dto.Admin;
-import com.fantastic4.restapi.dto.Room;
-import com.fantastic4.restapi.dto.Sensor;
-import com.fantastic4.restapi.dto.SensorData;
+import com.fantastic4.restapi.dto.*;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
@@ -42,6 +39,12 @@ public class FirebaseInitialize {
     }
 
     public String addSensor(Sensor sensor) throws ExecutionException, InterruptedException {
+        System.out.println(sensor.getSensorID());
+        System.out.println(sensor.getFloorNo());
+        System.out.println(sensor.getRoomNo());
+        System.out.println(sensor.getLatestCO2Level());
+        System.out.println(sensor.getLatestSmokeLevel());
+
         ApiFuture<WriteResult> collectionApiFuture = firestore
                 .collection("sensors")
                 .document(sensor.getSensorID())
@@ -73,6 +76,15 @@ public class FirebaseInitialize {
                 .collection("admins")
                 .document(admin.getAdminID())
                 .set(admin);
+
+        return collectionApiFuture.get().getUpdateTime().toString();
+    }
+
+    public String addFloor(Floor floor) throws ExecutionException, InterruptedException {
+        ApiFuture<WriteResult> collectionApiFuture = firestore
+                .collection("floors")
+                .document(floor.getFloorID())
+                .set(floor);
 
         return collectionApiFuture.get().getUpdateTime().toString();
     }
@@ -138,6 +150,22 @@ public class FirebaseInitialize {
         return admin;
     }
 
+    public Floor getFloorByID(String id) throws ExecutionException, InterruptedException {
+        DocumentReference documentReference = firestore
+                .collection("floors")
+                .document(id);
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        Floor floor = null;
+
+        DocumentSnapshot snapshot = future.get();
+
+        if (snapshot.exists()) {
+            floor = snapshot.toObject(Floor.class);
+        }
+
+        return floor;
+    }
+
     public String updateSensor(Sensor sensor) throws ExecutionException, InterruptedException {
         ApiFuture<WriteResult> future = firestore
                 .collection("sensors")
@@ -170,6 +198,15 @@ public class FirebaseInitialize {
         return future.get().getUpdateTime().toString();
     }
 
+    public String updateFloor(Floor floor) throws ExecutionException, InterruptedException {
+        ApiFuture<WriteResult> future = firestore
+                .collection("floors")
+                .document(floor.getFloorID())
+                .set(floor);
+
+        return future.get().getUpdateTime().toString();
+    }
+
     public String deleteSensor(String sensorID) throws ExecutionException, InterruptedException {
         ApiFuture<WriteResult> future = firestore
                 .collection("sensors")
@@ -197,6 +234,14 @@ public class FirebaseInitialize {
     public String deleteAdmin(String id) throws ExecutionException, InterruptedException {
         ApiFuture<WriteResult> future = firestore
                 .collection("admins")
+                .document(id).delete();
+
+        return future.get().getUpdateTime().toString();
+    }
+
+    public String deleteFloor(String id) throws ExecutionException, InterruptedException {
+        ApiFuture<WriteResult> future = firestore
+                .collection("floors")
                 .document(id).delete();
 
         return future.get().getUpdateTime().toString();
@@ -289,8 +334,37 @@ public class FirebaseInitialize {
         return adminArrayList;
     }
 
-    public String login(Admin admin) {
+    public ArrayList<Floor> getAllFloors() throws ExecutionException, InterruptedException {
+        ApiFuture<QuerySnapshot> futures = firestore
+                .collection("floors").get();
 
-        return "true";
+        ArrayList<Floor> floorArrayList = new ArrayList<>();
+
+        List<QueryDocumentSnapshot> documents = futures.get().getDocuments();
+        documents.forEach(doc -> {
+            floorArrayList.add(doc.toObject(Floor.class));
+        });
+
+        return floorArrayList;
+    }
+
+    public String login(Admin admin) throws ExecutionException, InterruptedException {
+        DocumentReference documentReference = firestore
+                .collection("admins")
+                .document(admin.getAdminID());
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        Admin adminOb = null;
+
+        DocumentSnapshot document = future.get();
+        if (document.exists()) {
+            adminOb = document.toObject(Admin.class);
+        }
+
+        assert adminOb != null;
+        if (admin.getPassword().equals(adminOb.getPassword()) ){
+            return "true";
+        }
+
+        return "false";
     }
 }
