@@ -29,7 +29,7 @@ public class FloorController {
     }
 
     @GetMapping("/getFloor")
-    public Room getFloor(@RequestParam String floorID) throws ExecutionException, InterruptedException {
+    public Floor getFloor(@RequestParam String floorID) throws ExecutionException, InterruptedException {
         return firebaseInitialize.getFloorByID(floorID);
     }
 
