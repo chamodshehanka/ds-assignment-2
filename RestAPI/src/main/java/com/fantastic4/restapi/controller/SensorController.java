@@ -16,6 +16,7 @@ public class SensorController {
 
     @PostMapping("/createSensor")
     public String addSensor(@RequestBody Sensor sensor) throws ExecutionException, InterruptedException {
+        System.out.println(sensor.getSensorID());
         return firebaseInitialize.addSensor(sensor);
     }
 
