@@ -19,9 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 public class LiveDashboardController implements Initializable {
@@ -82,11 +80,20 @@ public class LiveDashboardController implements Initializable {
 
             loadSensorTableView();
 
+            Timer timer = new Timer();
+            timer.schedule(new update(),0,15000);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+     static class  update() extends TimerTask {
 
+         @Override
+         public void run() {
+             loadSensorTableView();
+         }
+     }
     private void loadSensorTableView(){
 
         colSensorID.setCellValueFactory(new PropertyValueFactory<>("sensorID"));

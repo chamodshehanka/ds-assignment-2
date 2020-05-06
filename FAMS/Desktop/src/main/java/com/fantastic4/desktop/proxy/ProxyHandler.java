@@ -18,9 +18,9 @@ public class ProxyHandler implements ServicesFactory{
     private ProxyHandler() {
         try {
             System.setProperty("java.security.policy", "file:./client.policy");
-//            if(System.getSecurityManager() == null ){
-//                System.setSecurityManager( new RMISecurityManager() );
-//            }
+            if(System.getSecurityManager() == null ){
+                System.setSecurityManager( new RMISecurityManager() );
+            }
             ServicesFactory servicesFactory = (ServicesFactory) Naming.lookup("//localhost:5050/fams");
             sensorService = (SensorService) servicesFactory.getService(ServicesType.SENSOR);
             adminService = (AdminService) servicesFactory.getService(ServicesType.ADMIN);

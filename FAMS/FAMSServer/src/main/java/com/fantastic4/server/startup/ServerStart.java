@@ -7,6 +7,7 @@ import com.fantastic4.server.services.impl.custom.SensorServiceImpl;
 
 
 import javax.swing.*;
+import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -25,8 +26,8 @@ public class ServerStart {
         System.setProperty("java.security.policy", "file:./server.policy");
 
 //        System.setProperty("java.rmi.server.hostname","127.0.0.1");
-//        System.setProperty("java.security.policy","security.policy");
-//        System.setSecurityManager(new RMISecurityManager());
+        System.setProperty("java.security.policy","security.policy");
+        System.setSecurityManager(new RMISecurityManager());
         try {
             if (true) {
 //                if(System.getSecurityManager() == null ){
@@ -77,6 +78,9 @@ public class ServerStart {
                         HttpRequest request2 = HttpRequest.newBuilder()
                                 .uri(URI.create("http://localhost:9091/send-sms"))
                                 .build();
+
+                        System.out.println("Email Sent");
+                        System.out.println("SMS Sent");
 
                         //HttpResponse response1 = client.send(request1, HttpResponse.BodyHandlers.discarding());
                         //HttpResponse response2 = client.send(request2, HttpResponse.BodyHandlers.discarding());

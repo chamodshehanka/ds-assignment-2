@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="sensorDTOS" styleClass="root" prefHeight="713.0" prefWidth="1219.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.ManageSensorsController">
+<AnchorPane id="sensorDTOS" prefHeight="713.0" prefWidth="1219.0" style="-fx-background-color: white;" styleClass="root" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.ManageSensorsController">
     <children>
         <AnchorPane layoutX="40.0" layoutY="56.0" prefHeight="170.0" prefWidth="921.0" styleClass="container">
             <children>
                 <AnchorPane prefHeight="10.0" prefWidth="950.0" styleClass="container-header" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                 <AnchorPane layoutY="160.0" prefHeight="10.0" prefWidth="950.0" styleClass="container-footer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                <TextField fx:id="sensorID" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0"  styleClass="text-field-white" >
+                <TextField fx:id="sensorID" layoutX="46.0" layoutY="69.0" prefHeight="28.0" prefWidth="80.0" promptText="Sensor ID" styleClass="text-field-white">
                     <font>
                         <Font name="Calibri Bold" size="15.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="floorNo"  layoutX="144.0" layoutY="69.0" prefHeight="28.0" prefWidth="120.0"  styleClass="text-field-white" >
+                <TextField fx:id="floorNo" layoutX="144.0" layoutY="69.0" prefHeight="28.0" prefWidth="120.0" promptText="Floor No" styleClass="text-field-white">
                     <font>
                         <Font name="Calibri Bold" size="15.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="roomNo"  layoutX="298.0" layoutY="69.0" prefHeight="28.0" prefWidth="160.0"  styleClass="text-field-white" >
+                <TextField fx:id="roomNo" layoutX="298.0" layoutY="69.0" prefHeight="28.0" prefWidth="160.0" promptText="Room No" styleClass="text-field-white">
                     <font>
                         <Font name="Calibri Bold" size="15.0" />
                     </font>
@@ -64,11 +62,6 @@
                         <TableColumn fx:id="colRoom" prefWidth="125.66665649414062" text="Room" />
                     </columns>
                 </TableView>
-                <JFXButton layoutX="813.0" layoutY="88.0" styleClass="button-white" text="Print Driver Details" textFill="#2ecc71">
-                    <font>
-                        <Font name="Calibri Bold" size="16.0" />
-                    </font>
-                </JFXButton>
             </children>
         </AnchorPane>
     </children>
