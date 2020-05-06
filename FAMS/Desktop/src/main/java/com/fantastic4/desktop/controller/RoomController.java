@@ -39,7 +39,7 @@ public class RoomController {
         return roomService.findRoomByID(id);
     }
 
-    public List<RoomDTO> getAllRooms() throws Exception {
+    public static List<RoomDTO> getAllRooms() throws Exception {
         roomService = (RoomService) ProxyHandler.getInstance()
                 .getService(ServicesFactory.ServicesType.ROOM);
 
