@@ -41,12 +41,19 @@ public class SensorRepositoryImpl implements SensorRepository {
                 .uri(URI.create("http://localhost:8080/deleteSensor?sensorID=" + id))
                 .DELETE().build();
         HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
-        System.out.println(response + ":" + response.statusCode());
-        return false;
+
+        return response.statusCode() == 200;
     }
 
     @Override
     public boolean update(SensorDTO sensorDTO) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/updateSensor"))
+                .header("Content-Type", "application/json")
+                .PUT(HttpRequest.BodyPublishers.ofString(sensorDTO.toString()))
+                .build();
+        HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
+        System.out.println(response.statusCode());
         return false;
     }
 

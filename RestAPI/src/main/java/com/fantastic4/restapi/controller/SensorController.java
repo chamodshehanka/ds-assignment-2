@@ -21,12 +21,12 @@ public class SensorController {
 
     @DeleteMapping("/deleteSensor")
     public String removeSensor(@RequestParam String sensorID) throws ExecutionException, InterruptedException {
-        System.out.println("Sensor ID ::: " + sensorID);
         return firebaseInitialize.deleteSensor(sensorID);
     }
 
     @PutMapping("/updateSensor")
     public String updateSensor(@RequestBody Sensor sensor) throws ExecutionException, InterruptedException {
+        System.out.println(sensor.getSensorID());
         return firebaseInitialize.updateSensor(sensor);
     }
 

@@ -27,7 +27,12 @@ public class ServerStart {
                 registry.rebind("fams", ServicesFactoryImpl.getInstance());
                 System.out.println("Server has been started successfully");
                 SensorServiceImpl sensorService = new SensorServiceImpl();
-                System.out.println(sensorService.deleteSensor("S003"));
+                SensorDTO sensorDTO = new
+                                SensorDTO("S004", 3, 3,3,3, false);
+                System.out.println(sensorDTO.toString());
+
+                System.out.println(sensorService.addSensor(sensorDTO));
+
             } else {
                 JOptionPane.showMessageDialog(null,
                         "API is not connected", "Error", JOptionPane.INFORMATION_MESSAGE);
