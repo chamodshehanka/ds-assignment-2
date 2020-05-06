@@ -48,12 +48,5 @@ public class SensorController {
         return sensorService.deleteSensor(id);
     }
 
-    public List<SensorDataDTO> getSensorData(String sensorID) throws Exception {
-        System.out.println("Inside getSensorData Controller");
-        sensorService = (SensorService) ProxyHandler.getInstance()
-                .getService(ServicesFactory.ServicesType.SENSOR);
-
-        return sensorService.getSensorData(sensorID);
-    }
 
 }

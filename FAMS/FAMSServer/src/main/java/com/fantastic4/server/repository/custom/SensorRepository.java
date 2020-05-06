@@ -9,5 +9,4 @@ import java.util.List;
 
 public interface SensorRepository extends SuperRepository<SensorDTO, String> {
 
-    List<SensorDataDTO> getSensorData(String sensorID) throws IOException, InterruptedException;
 }

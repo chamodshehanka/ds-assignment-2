@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="359.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.SensorDataController">
+<AnchorPane prefHeight="427.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fantastic4.desktop.fxml.controller.SensorDataController">
    <children>
-      <Text fx:id="sensorName" layoutX="97.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor Name">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="-12.0" stroke="BLACK" strokeType="INSIDE" width="365.0" />
+      <ProgressIndicator fx:id="co2Value" layoutX="204.0" layoutY="173.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" progress="0.4" AnchorPane.rightAnchor="25.0">
+         <effect>
+            <Blend />
+         </effect>
+      </ProgressIndicator>
+      <ProgressIndicator fx:id="smokeValue" cache="true" layoutX="18.0" layoutY="173.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" progress="0.6" AnchorPane.leftAnchor="18.0" />
+      <Text fx:id="sensorName" fill="WHITE" layoutX="109.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensor Name" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="108.203125">
          <font>
             <Font size="24.0" />
          </font>
@@ -21,7 +31,7 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Text fill="#6f6f6f" layoutX="28.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smoke Level" AnchorPane.leftAnchor="28.0">
+      <Text fill="#6f6f6f" layoutX="24.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smoke Level" AnchorPane.leftAnchor="24.0">
          <font>
             <Font size="19.0" />
          </font>
@@ -36,27 +46,17 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="smokeLevel" layoutX="139.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smoke Level" AnchorPane.rightAnchor="40.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text fill="#6f6f6f" layoutX="25.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Level" AnchorPane.leftAnchor="28.0">
+      <Text fill="#6f6f6f" layoutX="212.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Level" AnchorPane.rightAnchor="32.0">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Text fx:id="co2Level" layoutX="172.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CO2 Level" AnchorPane.rightAnchor="40.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text fill="#6f6f6f" layoutX="28.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.leftAnchor="28.0">
+      <Text fill="#6f6f6f" layoutX="25.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Text fx:id="status" layoutX="172.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.rightAnchor="40.0">
+      <Text fx:id="status" layoutX="223.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.rightAnchor="41.44140625">
          <font>
             <Font size="24.0" />
          </font>

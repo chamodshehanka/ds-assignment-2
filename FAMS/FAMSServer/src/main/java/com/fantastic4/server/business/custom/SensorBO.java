@@ -18,6 +18,5 @@ public interface SensorBO extends SuperBO {
 
     List<SensorDTO> getAllSensors() throws Exception;
 
-    List<SensorDataDTO> getSensorData(String sensorID) throws Exception;
 
 }

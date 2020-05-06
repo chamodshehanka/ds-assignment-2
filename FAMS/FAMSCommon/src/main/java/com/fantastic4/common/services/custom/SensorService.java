@@ -18,7 +18,6 @@ public interface SensorService extends SuperService {
 
     List<SensorDTO> getAllSensors() throws Exception;
 
-    List<SensorDataDTO> getSensorData(String sensorID) throws Exception;
 
     // Add Observers later
 
