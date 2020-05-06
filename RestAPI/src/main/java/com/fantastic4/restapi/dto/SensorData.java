@@ -3,25 +3,19 @@ package com.fantastic4.restapi.dto;
 public class SensorData {
     private String sensorDataID;
     private String sensorID;
-    private int floorNo;
-    private int roomNo;
     private int co2Level;
     private int smokeLevel;
     private String date;
-    private boolean status;
 
     public SensorData() {
     }
 
-    public SensorData(String sensorDataID, String sensorID, int floorNo, int roomNo, int co2Level, int smokeLevel, String date, boolean status) {
+    public SensorData(String sensorDataID, String sensorID, int co2Level, int smokeLevel, String date) {
         this.sensorDataID = sensorDataID;
         this.sensorID = sensorID;
-        this.floorNo = floorNo;
-        this.roomNo = roomNo;
         this.co2Level = co2Level;
         this.smokeLevel = smokeLevel;
         this.date = date;
-        this.status = status;
     }
 
     public String getSensorDataID() {
@@ -38,22 +32,6 @@ public class SensorData {
 
     public void setSensorID(String sensorID) {
         this.sensorID = sensorID;
-    }
-
-    public int getFloorNo() {
-        return floorNo;
-    }
-
-    public void setFloorNo(int floorNo) {
-        this.floorNo = floorNo;
-    }
-
-    public int getRoomNo() {
-        return roomNo;
-    }
-
-    public void setRoomNo(int roomNo) {
-        this.roomNo = roomNo;
     }
 
     public int getCo2Level() {
@@ -80,11 +58,4 @@ public class SensorData {
         this.date = date;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 }
